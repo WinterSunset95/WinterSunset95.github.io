@@ -1,7 +1,13 @@
+import React from 'react'
+import Header from './components/Header'
+import Main from './components/Main'
 
 function App() {
   return (
-    <h1>Wassup mofo</h1>
+    <div className="container">
+      <Header />
+      <Main />
+    </div>
   );
 }
 
