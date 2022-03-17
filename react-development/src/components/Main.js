@@ -6,44 +6,30 @@ import Games from "./Main/Games"
 import Projects from "./Main/Projects" 
 import Tutorials from "./Main/Tutorials"
  
-class Child extends React.Component {
-	render () {
-		if (this.props.tab === "Home") {
-			return (<Home />)
-		} else if (this.props.tab === "About") {
-			return (<About />)
-		} else if (this.props.tab === "Explore") {
-			return (<Explore />)
-		} else if (this.props.tab === "Games") {
-			return (<Games />)
-		} else if (this.props.tab === "Projects") { 
-			return (<Projects />)
-		} else if (this.props.tab === "Tutorials") {
-			return (<Tutorials />)
-		}
-	}
-} 
-
-class Parent extends React.Component {
-	state = {
-		tab: null
-	};
-	homeTab = e => {
-		this.setState({tab: "Home"})
-	}aboutTab = e => {
-		this.setState({tab: "About"})
-	}exploreTab = e => {
-		this.setState({tab: "Explore"})
-	}gamesTab = e => {
-		this.setState({tab: "Games"})
-	}projectsTab = e => {
-		this.setState({tab: "Projects"})
-	}tutorialsTab = e => {
-		this.setState({tab: "Tutorials"})
-	}
-	render () {
+export default function Main(tab) {
+	if (tab === "Home") {
 		return (
-			<Child tab={this.state.tab} />
+			<Home />
+		)
+	} else if (tab === "About") {
+		return (
+			<About />
+		)
+	} else if (tab === "Explore") {
+		return (
+			<Explore />
+		)
+	} else if (tab === "Games") {
+		return (
+			<Games />
+		)
+	} else if (tab === "Projects") {
+		return (
+			<Projects />
+		)
+	} else if (tab === "Tutorials") {
+		return (
+			<Tutorials />
 		)
 	}
 }

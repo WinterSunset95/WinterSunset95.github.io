@@ -1,20 +1,23 @@
 import React from 'react'
 import Logo from '../images/Logo.jpg'
+import Main from './Main'
+var MainContent = "Hello";
+function openTab(evt) {
+	var i, child, tabName;
+	child = document.getElementById('tabList').children
+	for (i=0; i<child.length; i++) {
+		child[i].classList.remove("active")
+	}
+	evt.currentTarget.className += " active"
+	tabName = evt.currentTarget.innerText
+	console.log(tabName)
+	MainContent = Main(tabName)
+	console.log(MainContent)
+}
 
 export default function Header() {
-
-
-	function openTab(evt) {
-		var i, child, tabName;
-		child = document.getElementById('tabList').children
-		for (i=0; i<child.length; i++) {
-			child[i].classList.remove("active")
-		}
-		evt.currentTarget.className += " active"
-		tabName = evt.currentTarget.innerText
-		console.log(tabName)
-	}
-    return (
+	    return (
+		<>
 		<header className="navbar navbar-expand-md navbar-dark bg-dark">
 			<nav className="container-xxl container-fluid flex-wrap flex-md-nowrap p-2" aria-label="Main Navigation">
 				<a className="navbar-brand p-0" href="/" aria-label="Winter">
@@ -43,5 +46,7 @@ export default function Header() {
 				</div>
 			</nav>
 		</header>
+		{MainContent}
+		</>
     )
 }
