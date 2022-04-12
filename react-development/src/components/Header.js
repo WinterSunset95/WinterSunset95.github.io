@@ -3,16 +3,32 @@ import Logo from '../images/Logo.jpg'
 
 export default function Header() {
     return (
-        <nav className="row nav border align-items-center">
-            <div className='align-items-center col-6'>
-                <img src={Logo} width="50px" alt="Winter's display pic" className="rounded-circle" />
-                <h2 className="font-size-md">WinterSunset95</h2>
-            </div>
-            <ul className="col-6 nav d align-items-center justify-content-end nav-pills">
-                <li className="nav-item "><a href="" className="nav-link active">Home</a></li>
-                <li className="nav-item "><a href="" className="nav-link">Projects</a></li>
-                <li className="nav-item "><a href="" className="nav-link">Games</a></li>
-            </ul>
-        </nav>
+		<header class="navbar navbar-expand-md navbar-dark bg-dark">
+			<nav class="container-xxl container-fluid flex-wrap flex-md-nowrap" aria-label="Main Navigation">
+				<a class="navbar-brand p-0" href="/" aria-label="Winter">
+					<img src={Logo} width="40px" alt="Winters Logo" className="rounded-circle" />
+				</a>
+				<button class="navbar-toggler" type="toggle" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="#bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span className="navbar-toggler-icon"></span>
+				</button>
+				<div id="bdNavbar" class="navbar-collapse collapse show">
+					<ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0 nav-tabs">
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 active" href="">Home</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Explore</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Projects</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Games</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">About</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Tutorials</a></li>
+					</ul>
+					<hr />
+					<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">GitHub</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Facebook</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Instagram</a></li>
+						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Twitter</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
     )
 }
