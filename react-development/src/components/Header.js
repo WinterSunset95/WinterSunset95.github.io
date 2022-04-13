@@ -2,31 +2,43 @@ import React from 'react'
 import Logo from '../images/Logo.jpg'
 
 export default function Header() {
+
+
+	function openTab(evt) {
+		var i, child;
+		child = document.getElementById('tabList').children
+		console.log(child)
+		for (i=0; i<child.length; i++) {
+			child[i].classList.remove("active")
+			console.log(child[i])
+		}
+		evt.currentTarget.className += " active"
+	}
     return (
-		<header class="navbar navbar-expand-md navbar-dark bg-dark">
-			<nav class="container-xxl container-fluid flex-wrap flex-md-nowrap p-2" aria-label="Main Navigation">
-				<a class="navbar-brand p-0" href="/" aria-label="Winter">
+		<header className="navbar navbar-expand-md navbar-dark bg-dark">
+			<nav className="container-xxl container-fluid flex-wrap flex-md-nowrap p-2" aria-label="Main Navigation">
+				<a className="navbar-brand p-0" href="/" aria-label="Winter">
 					<img src={Logo} width="40px" alt="Winters Logo" className="rounded-circle m-2" />
-					<span class="pl-2">Winter</span>
+					<span className="pl-2">Winter</span>
 				</a>
-				<button class="navbar-toggler" type="toggle" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="#bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
+				<button className="navbar-toggler" type="toggle" data-bs-toggle="collapse" data-bs-target="#bdNavbar" aria-controls="#bdNavbar" aria-expanded="false" aria-label="Toggle navigation">
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div id="bdNavbar" class="navbar-collapse collapse show">
-					<ul class="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0 nav-pills">
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2 active" href="">Home</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Explore</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Projects</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Games</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">About</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Tutorials</a></li>
+				<div id="bdNavbar" className="navbar-collapse collapse show">
+					<ul className="navbar-nav flex-row flex-wrap bd-navbar-nav pt-2 py-md-0 nav-pills tabList" id="tabList">
+						<li onClick={openTab} className="cursor-float nav-link p-2 col-6 col-md-auto active">Home</li>
+						<li onClick={openTab} className="cursor-float nav-link p-2 col-6 col-md-auto">Explore</li>
+						<li onClick={openTab} className="cursor-float nav-link p-2 col-6 col-md-auto">Projects</li>
+						<li onClick={openTab} className="cursor-float nav-link p-2 col-6 col-md-auto">Games</li>
+						<li onClick={openTab} className="cursor-float nav-link p-2 col-6 col-md-auto">About</li>
+						<li onClick={openTab} className="cursor-float nav-link p-2 col-6 col-md-auto">Tutorials</li>
 					</ul>
 					<hr />
-					<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">GitHub</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Facebook</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Instagram</a></li>
-						<li class="nav-item col-6 col-md-auto"><a class="nav-link p-2" href="">Twitter</a></li>
+					<ul className="navbar-nav flex-row flex-wrap ms-md-auto">
+						<li className="nav-item col-6 col-md-auto"><a className="nav-link p-2" href="">GitHub</a></li>
+						<li className="nav-item col-6 col-md-auto"><a className="nav-link p-2" href="">Facebook</a></li>
+						<li className="nav-item col-6 col-md-auto"><a className="nav-link p-2" href="">Instagram</a></li>
+						<li className="nav-item col-6 col-md-auto"><a className="nav-link p-2" href="">Twitter</a></li>
 					</ul>
 				</div>
 			</nav>

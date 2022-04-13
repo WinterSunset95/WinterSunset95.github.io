@@ -14,3 +14,6 @@ code {
 .main-container {
 	margin: 0;
 }
+.cursor-float {
+	cursor: pointer;
+}
