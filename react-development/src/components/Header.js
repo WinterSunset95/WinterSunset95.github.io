@@ -5,14 +5,14 @@ export default function Header() {
 
 
 	function openTab(evt) {
-		var i, child;
+		var i, child, tabName;
 		child = document.getElementById('tabList').children
-		console.log(child)
 		for (i=0; i<child.length; i++) {
 			child[i].classList.remove("active")
-			console.log(child[i])
 		}
 		evt.currentTarget.className += " active"
+		tabName = evt.currentTarget.innerText
+		console.log(tabName)
 	}
     return (
 		<header className="navbar navbar-expand-md navbar-dark bg-dark">
