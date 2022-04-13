@@ -1,7 +1,10 @@
 import React from "react";
+import Home from "./Main/Home"
 
 export default function Main() {
     return (
-        <h1>Main content goes here</h1>
+		<>
+			<Home />
+		</>
     )
 }
