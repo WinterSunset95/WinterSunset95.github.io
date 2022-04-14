@@ -6,6 +6,7 @@ import Games from "./Main/Games"
 import Projects from "./Main/Projects" 
 import Tutorials from "./Main/Tutorials"
  
+
 export default function Main(tab) {
 	if (tab === "Home") {
 		return (
