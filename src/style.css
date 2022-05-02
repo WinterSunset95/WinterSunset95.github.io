@@ -1,0 +1,24 @@
+
+.parallax {
+    width: 100vw; 
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+}
+header {
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+header > img {
+    position: absolute;
+    width: 100vw;
+    top: 20%;
+    z-index: -1;
+    object-fit: cover;
+    transform: translateZ(-10px) scale(2);
+}
+.about {
+    background-color: rgba(100, 100, 100, 0.7);
+}
