@@ -13,7 +13,7 @@ header {
 }
 header > img {
     position: absolute;
-    width: 100vw;
+    height: 150vh;
     top: 20%;
     z-index: -1;
     object-fit: cover;
