@@ -12,7 +12,7 @@ body {
     transform-style: preserve-3d;
     z-index: -1;
 }
-img {
+.bg {
     width: 100vw;
     min-width: 100vw;
     min-height: 300vh;
@@ -45,8 +45,22 @@ footer {
     border-radius: 10px;
 }
 .title-container {
+    font-size: 70%;
     height: 60vh;
     width: 60vw;
     min-width: 300px;
     background-color: rgba(50, 50, 50, 0.3);
+}
+a {
+    text-decoration: none;
+    color: white;
+    transition: ease-in 0.1s;
+}
+a:hover {
+    color: white;
+    transform: scale(1.1);
+}
+.content-link:hover {
+    color: white;
+    transform: scale(2);
 }
