@@ -1,17 +1,18 @@
-
+body {
+    overflow: hidden;
+    height: 100vh;
+}
 .parallax {
     width: 100vw; 
-    height: 100vh;
+    height: auto;
     overflow-x: hidden;
     overflow-y: auto;
     perspective: 10px;
-}
-header {
     height: 100%;
     transform-style: preserve-3d;
     z-index: -1;
 }
-header > img {
+img {
     width: 100vw;
     top: 20%;
     position: absolute;
@@ -23,18 +24,26 @@ header > img {
 section {
     height: auto;
     min-height: 100vh;
-}
-.about {
-    background-color: rgba(100, 100, 100, 0.7);
-}
-.home {
-    min-width: 100vw;
-    min-height: 100vh;
     color: white;
     font-family: 'Poppins', 'sans-serif';
     font-weight: 500;
 }
+.about {
+    background-color: rgba(50, 50, 50, 0.7);
+}
+.content {
+    background-color: rgba(50, 50, 50, 0.7);
+}
+footer {
+    background-color: rgba(50, 50, 50, 0.95);
+}
+.top-right-logo {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+}
 .title-container {
+    font-size: 70%;
     height: 60vh;
     width: 60vw;
     background-color: rgba(150, 150, 150, 0.3);
