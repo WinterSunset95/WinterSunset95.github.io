@@ -25,7 +25,7 @@ img {
 }
 section {
     height: auto;
-    min-height: 100vh;
+    min-height: 105vh;
     color: white;
     font-family: 'Poppins', 'sans-serif';
     font-weight: 500;
@@ -45,8 +45,8 @@ footer {
     border-radius: 10px;
 }
 .title-container {
-    font-size: 70%;
     height: 60vh;
     width: 60vw;
-    background-color: rgba(150, 150, 150, 0.3);
+    min-width: 300px;
+    background-color: rgba(50, 50, 50, 0.3);
 }
