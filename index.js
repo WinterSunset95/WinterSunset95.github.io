@@ -1,3 +1,30 @@
+const content = [
+  {
+    link: 'https://wintersunset95.github.io/winter-nvim',
+    name: 'Winter-nvim'
+  },
+  {
+    link: 'https://wintersunset95.github.io/Arch-Dotfiles',
+    name: 'Arch-Dotfiles'
+  },
+  {
+    link: 'https://wintersunset95.github.io/Vid-Dwlder',
+    name: 'Vid-Dwlder'
+  },
+  {
+    link: 'https://wintersunset95.github.io/termux-gui',
+    name: 'Termux-gui'
+  },
+  {
+    link: '',
+    name: 'Learning Material'
+  },
+  {
+    link: '',
+    name: 'Other Developers'
+  },
+
+]
 const Home = () => {
   return (
     <div class="parallax">
@@ -20,24 +47,15 @@ const Home = () => {
 	</section>
 	<section class="content d-flex flex-column p-2 p-md-3 p-lg-5 justify-content-center">
 	    <h3 class="text-center">Content</h3>
-	    <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
-		<a href="https://wintersunset95.github.io/winter-nvim" class="content-link p-1 p-md-2 p-lg-3">Winter-nvim</a>
-	    </div>
-	    <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
-		<a href="https://wintersunset95.github.io/Arch-Dotfiles" class="content-link p-1 p-md-2 p-lg-3">Arch-Dotfiles</a>
-	    </div> 
-	    <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
-		<a href="https://wintersunset95.github.io/Vid-Dwlder" class="content-link p-1 p-md-2 p-lg-3">Vid-Dwlder</a>
-	    </div> 
-	    <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
-		<a href="https://wintersunset95.github.io/termux-gui" class="content-link p-1 p-md-2 p-lg-3">termux-gui</a>
-	    </div> 
-	    <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
-		<a href="" class="content-link p-1 p-md-2 p-lg-3">Learning materials</a>
-	    </div> 
-	    <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
-		<a href="" class="content-link p-1 p-md-2 p-lg-3">Other Developers</a>
-	    </div>
+	    {
+	      content.map(({link, name}) => {
+		return (
+		  <div class="m-3 m-md-4 m-lg-5 p-1 p-md-2 p-lg-3">
+		    <a href={link} class="content-link p-1 p-md-2 p-lg-3">{name}</a>
+		  </div>
+		)
+	      })
+	    }
 	</section>
 	<footer class="d-flex flex-row flex-wrap align-items-center p-3 justify-content-center">
 	    <a href="https://github.com/WinterSunset95" class="p-2 p-md-4 p-lg-5">
@@ -63,6 +81,5 @@ const Home = () => {
 
   )
 }
-
 
 ReactDOM.render(<Home />, document.getElementById('root'))
