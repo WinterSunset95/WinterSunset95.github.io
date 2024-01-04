@@ -3,5 +3,27 @@
 	background-color: var(--highlight);
 }
 
-main {
+.intro > h1 {
+	margin-top: 1rem;
+}
+
+.intro > * {
+	margin-bottom: 1rem;
+}
+
+.latest > hr {
+	margin-bottom: 1rem;
+}
+
+#latest a {
+	text-decoration: none;
+	margin-bottom: 1rem;
+}
+
+#latest a:hover {
+	text-decoration: underline;
+}
+
+#latest > div {
+	margin-bottom: 1rem;
 }
