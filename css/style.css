@@ -1,16 +1,25 @@
 .light {
-	--primary: #e6e6fa;
-	--accent: #ffdab9;
-	--text: #808080;
-	--highlight: #ffc0cb;
-	--button: #ff6f61;
-	--footer: #6495ed;
+	--primary: #0d1321;
+	--accent: #1d2d44;
+	--text: #ffffff;
+	--highlight: #748cab;
+	--button: #3e5c76;
+	--footer: #1d2d44;
 }
 
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: var(--highlight);
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 body {
@@ -20,6 +29,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--primary);
+	color: var(--text);
 }
 
 .doc_root {

@@ -6,6 +6,7 @@ nav {
 	padding: 1rem;
 	position: relative;
 	font-size: 1.5rem;
+	border-bottom: 1px solid black;
 }
 
 nav > h1 {
@@ -29,15 +30,6 @@ nav > ul {
 nav > ul > li {
 	margin: 1rem;
 	text-decoration: none;
-}
-
-nav > ul > li > a {
-	text-decoration: none;
-	color: var(--text);
-}
-
-nav > ul > li > a:hover {
-	color: var(--highlight);
 }
 
 .hidden {
