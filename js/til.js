@@ -12,13 +12,11 @@ function getTil(filename) {
 		div.innerHTML = data
 		console.log(div)
 		const title = div.querySelector("h1").innerText
-		const intro = div.querySelector("#intro").innerText
 		const toAppend = document.createElement("div")
 		toAppend.innerHTML = `
 		<a href="${homeUrl}/til/til.html?id=${filename}">
 			<h3>${title}</h3>
 		</a>
-		<p>${latest ? intro : ""}</p>
 		`
 		if (latest) {
 			latest.appendChild(toAppend)

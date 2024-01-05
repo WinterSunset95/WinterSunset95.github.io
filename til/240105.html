@@ -1,0 +1,48 @@
+<h1>Accessing your PHP development server from other devices on the network</h1>
+<p>Dated: 05/01/2024</p>
+<div>
+	<p>
+		As I was building my website, I wanted to be able to access it from my phone and tablet to see how it looked on them.
+	</p>
+	<hr>
+	<p>
+		I use Archlinux with i3wm as my main OS, and the normal PHP development server to test my code. <br>
+		Here's what I did:
+	</p>
+	<hr>
+	<p>
+		First, I found my local IP address with the command:
+		<code>
+			ifconfig
+		</code>
+		Output:
+		<img class="blog_image" src="https://i.imgur.com/p6VwgFl.png" alt="">
+		Look for "inet <ip address>" under "wlo1" (or whatever your network interface is called).
+		In my case, it's 192.168.243.51
+	</p>
+	<hr>
+	<p>
+	Go to your project directory and run the PHP development server with the command:
+		<code>
+			php -S 192.168.243.51:8080
+		</code>
+		(Note that you need to use your own IP address here, not mine)
+		Output:
+		<img class="blog_image" src="https://i.imgur.com/iowutrI.png" alt="">
+	</p>
+	<hr>
+	<p>
+		Now, you can access your website from any device on the same network by typing your IP address and port number in the browser.
+		<br>
+		For example, I can access my website from my phone by typing into the browser:
+		<code>
+			http://192.168.243.51:8080
+		</code>
+		Output:
+		<img class="blog_image" src="https://i.imgur.com/WmLHoU8.jpg" alt="Image as seen from mobile phone">
+	</p>
+	<hr>
+	<p>
+		And there you have it! You can now access your website from any device on the same network.
+	</p>
+</div>
