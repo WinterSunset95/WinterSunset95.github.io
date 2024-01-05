@@ -58,7 +58,7 @@ body {
 
 .doc_root {
 	width: 100%;
-	max-width: 1020px;
+	max-width: 1990px;
 	height: 100%;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
