@@ -1,7 +1,83 @@
 <h1>How to add custom light and dark themes with vanilla html/css/js</h1>
 <p>Dated: 01/01/2024</p>
-<p id="intro">
+<div id="intro">
 	I've always wondered how to add a theme-switcher on my websites. Recently I came across 
 	<a target="_blank" href="https://fireship.io/lessons/theme-toggler/">this</a>
 	post by Jeff (Fireship) and it was such a great resource. 
-</p>
+
+	<hr>
+	<br>
+
+	I will try my best to simplify what I learnt. There are three files: index.html, style.css and script.js.
+	In the css file, we have two classes: .light and .dark as shown below.
+	<pre>
+		<code>
+.dark {
+	--color: #ffffff;
+	--primary: #50514f;
+	--secondary: #2c14a3;
+	--accent: yellow;
+	--gradient: linear-gradient(45deg, #2c14a3, rgba(0, 0, 0, 0));
+	--text-bg: #2c14a390;
+	--shadow: 0 0 5rem 5rem #2c14a390;
+}
+
+.light {
+	--color: #000000;
+	--primary: #ffffff;
+	--secondary: #5bc0be;
+	--accent: #ff6392;
+	--gradient: linear-gradient(45deg, #5bc0be, rgba(0, 0, 0, 0));
+	--text-bg: #5bc0be90;
+	--shadow: 0 0 5rem 5rem #5bc0be90;
+}
+		</code>
+	</pre>
+	We apply these variables to the html elements as normal. For example:
+	<pre>
+	<code>
+body {
+	background: var(--gradient);
+	color: var(--color);
+}
+	</code>
+	</pre>
+
+	<hr>
+	<br>
+
+	In the script.js file, we have the following code:
+	<pre>
+	<code>
+function toggleTheme() {
+	const body = document.body;
+	body.classList.toggle("light");
+	body.classList.toggle("dark");
+}
+	</code>
+	</pre>
+	We simply toggle between the two classes when the button with this function is clicked.
+
+	<hr>
+	<br>
+
+	Finally for the html file, we have the following code:
+	<xmp>
+<body class="light">
+	<button onclick="toggleTheme()">Toggle Theme</button>
+</body>
+	</xmp>
+
+	<hr>
+	<br>
+
+	<div class="blog_paragraph">
+		And that's it! You can now toggle between light and dark themes on your website. 
+		<br>
+		<br>
+		You can check out a demo on one of my projects: <br>
+		<a target="_blank" href="https://infotechbstreet.online/dolurmemorial">Dolur Memorial College</a>
+	</div>
+
+
+</div>

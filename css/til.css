@@ -38,7 +38,7 @@ main {
 	margin: 1rem 0;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 650px) {
 	.other_til_toggle {
 		display: none;
 	}
