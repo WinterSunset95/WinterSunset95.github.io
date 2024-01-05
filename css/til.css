@@ -1,0 +1,21 @@
+main {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	grid-gap: 1rem;
+}
+
+#other_til {
+	grid-column: 1 / 13;
+	grid-row: 10 / 13;
+}
+
+#TIL {
+	grid-column: 1 / 13;
+	grid-row: 1 / 9;
+}
+
+#prev_next {
+	grid-column: 1 / 13;
+	grid-row: 9 / 10;
+}
