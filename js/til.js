@@ -15,7 +15,7 @@ function getTil(filename) {
 		const toAppend = document.createElement("div")
 		toAppend.innerHTML = `
 		<a href="${homeUrl}/til/til.html?id=${filename}">
-			<h3>${title}</h3>
+			<h4>${title}</h4>
 		</a>
 		`
 		if (latest) {
@@ -88,7 +88,8 @@ if (id != "") {
 			}
 		})
 } else {
-	console.log("No id")
+	const prev_next = document.getElementById("prev_next")
+	prev_next.remove()
 }
 
 function toggleOtherTil() {

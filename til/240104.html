@@ -2,5 +2,85 @@
 <p>Dated: 04/01/2024</p>
 <div id="intro">
 	Reusable components are a great way to reduce code duplication and make your code more readable. 
-	Here's how you can create reusable components with vanilla html/css/js
+	The navbar, footer and comments sections of this whole website are all reusable components built
+	with vanilla html/css/js. <hr><br>
+	
+	Let's start with how I built the navbar. <br><br>
+
+	header.html:
+	<xmp><nav>
+	<a style="color: white;" href="/">
+		<h1>WinterSunset95</h1>
+	</a>
+	<ul id="navbar" class="hidden">
+		<li id="close_nav" onclick="navbarToggle()">
+			<i class="fa-solid fa-xmark"></i>
+		</li>
+		<li><a href="/">Home</a></li>
+		<li><a href="/about.html">About Me</a></li>
+		<li><a href="/projects.html">Projects</a></li>
+		<li><a href="/blog/index.html">Blog</a></li>
+		<li><a href="/til/til.html">TIL</a></li>
+	</ul>
+	<div class="hamburger" onclick="navbarToggle()">
+		<i class="fa-solid fa-bars"></i>
+	</div>
+</nav> </xmp>
+
+	<hr><br>
+	From my script file, I used the fetch api to get the contents of header.html and
+	insert it into the #content div of my index.html file.
+
+	<br><br>
+
+	script.js: 
+	<pre><code>const content = document.getElementById("content")
+
+const homeUrl = "" // Change this to your own domain
+
+// Fetch header
+fetch(`${homeUrl}/src/header.html`)
+.then(response => response.text())
+.then(data => {
+	const parser = new DOMParser()
+	const nav = parser.parseFromString(data, "text/html")
+	content.prepend(nav.body.firstChild)
+	const scriptFile = document.createElement("script")
+	scriptFile.src = `${homeUrl}/js/navbar.js` // This file contains the navbarToggle() function
+	document.body.appendChild(scriptFile)	   // You need to load the script file after the navbar is inserted into the DOM
+})
+
+// Fetch footer
+fetch(`${homeUrl}/src/footer.html`)
+.then(response => response.text())
+.then(data => {
+	const parser = new DOMParser()
+	const footer = parser.parseFromString(data, "text/html")
+	content.appendChild(footer.body.firstChild)
+})</code></pre>
+
+	<hr><br>
+	Now since my index.html file is quite large, I will only show the base layout and body of the page. <br> <br>
+
+	index.html:
+	<xmp><body>
+	<div id="doc_root" class="doc_root">
+		<div id="content" class="content">
+			<!-- Header will be inserted here -->
+			<!-- Main content of the page will be inserted here -->
+			<!-- Footer will be inserted here -->
+		</div>
+	</div>
+</body></xmp>
+
+	<br>
+	I trust you know enough to figure out how I built the footer and comments section.
+	<hr><br>
+
+	<h3>Disclaimer</h3>
+	<p>
+	I do not claim to be a master of html, css or javascript. I am still learning and I am sure there are better ways to do this.
+	The above code works for me and I am happy with it. If you have any suggestions, feel free to contact me or add a comment below.
+	</p>
+
 </div>
