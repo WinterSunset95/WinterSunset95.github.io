@@ -10,7 +10,7 @@ fetch(`${homeUrl}/src/header.html`)
 	const nav = parser.parseFromString(data, "text/html")
 	content.prepend(nav.body.firstChild)
 	const scriptFile = document.createElement("script")
-	scriptFile.src = "./js/navbar.js"
+	scriptFile.src = `${homeUrl}/js/navbar.js`
 	document.body.appendChild(scriptFile)
 })
 
