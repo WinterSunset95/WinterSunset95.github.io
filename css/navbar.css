@@ -5,14 +5,16 @@ nav {
 	align-items: center;
 	padding: 2rem;
 	position: relative;
-	font-size: 1.5rem;
 	border-bottom: 1px solid black;
 	overflow: hidden;
 }
 
+nav i {
+	font-size: 2rem;
+}
+
 nav > h1 {
 	flex-grow: 1;
-	font-size: 1.5rem;
 }
 
 nav > ul {
@@ -42,10 +44,6 @@ nav > ul > li {
 }
 
 @media only screen and (min-width: 600px) {
-
-	nav {
-		font-size: 1rem;
-	}
 
 	nav > ul {
 		display: flex;

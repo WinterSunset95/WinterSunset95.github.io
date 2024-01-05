@@ -13,24 +13,24 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +49 index.html
+badd +47 index.html
 badd +12 css/main.css
-badd +3 js/script.js
+badd +13 js/script.js
 badd +11 src/header.html
 badd +2 src/footer.html
 badd +5 css/footer.css
-badd +28 css/style.css
-badd +10 css/navbar.css
-badd +9 til/til.html
-badd +49 js/til.js
+badd +69 css/style.css
+badd +12 css/navbar.css
+badd +39 til/til.html
+badd +74 js/til.js
 badd +20 404.html
-badd +20 css/til.css
+badd +22 css/til.css
 argglobal
 %argdel
 $argadd index.html
-edit css/navbar.css
+edit js/til.js
 argglobal
-balt src/header.html
+balt css/style.css
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -41,12 +41,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 10 - ((9 * winheight(0) + 18) / 36)
+let s:l = 74 - ((16 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 10
-normal! 014|
+keepjumps 74
+normal! 036|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

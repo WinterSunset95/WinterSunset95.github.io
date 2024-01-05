@@ -22,7 +22,6 @@
 				</div>
 
 				<main>
-					<div id="other_til"></div>
 					<div id="TIL">
 						<h1>Today I learned</h1>
 						<p>
@@ -32,6 +31,17 @@
 						To see the latest TIL, click <a href="/til/til.html">here</a> <br>
 						</p>
 					</div>
+
+					<div class="other_til_toggle" onclick="toggleOtherTil()">
+						<div class="til_arrow">
+							<i class="fa-solid fa-arrow-right"></i>
+						</div>
+						<div class="til_arrow arrow_hidden">
+							<i class="fa-solid fa-arrow-down"></i>
+						</div>
+						Click to see other posts
+					</div>
+					<div id="other_til" class="til_collapsed"></div>
 					<div id="prev_next"></div>
 				</main>
 
