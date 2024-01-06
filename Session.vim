@@ -13,24 +13,31 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +47 index.html
-badd +12 css/main.css
-badd +13 js/script.js
-badd +11 src/header.html
-badd +2 src/footer.html
-badd +5 css/footer.css
-badd +69 css/style.css
-badd +12 css/navbar.css
-badd +39 til/til.html
-badd +74 js/til.js
+badd +12 index.html
+badd +23 css/main.css
+badd +23 js/script.js
+badd +20 src/header.html
+badd +5 src/footer.html
+badd +16 css/footer.css
+badd +47 css/style.css
+badd +11 css/navbar.css
+badd +12 js/til.js
 badd +20 404.html
-badd +22 css/til.css
+badd +56 css/til.css
+badd +57 css/about.css
+badd +123 about/index.html
+badd +1 til/til.json
+badd +33 til/index.html
+badd +13 til/latest/index.html
+badd +1 js/data.js
+badd +20 projects/index.html
+badd +11 blog/index.html
 argglobal
 %argdel
 $argadd index.html
-edit js/til.js
+edit blog/index.html
 argglobal
-balt css/style.css
+balt projects/index.html
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -41,12 +48,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 74 - ((16 * winheight(0) + 18) / 36)
+let s:l = 8 - ((7 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 74
-normal! 036|
+keepjumps 8
+normal! 050|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

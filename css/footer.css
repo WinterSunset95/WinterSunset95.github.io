@@ -3,3 +3,28 @@ footer {
 	padding: 1rem;
 	width: 100%;
 }
+
+footer > ul {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-bottom: 1px solid var(--text);
+}
+
+footer > div {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+footer > div > div {
+	padding: 0.5rem;
+	margin: 0.5rem;
+	background-color: var(--button);
+	border-radius: 0.5rem;
+}
+
+footer > div > div > a {
+	color: var(--text);
+}
