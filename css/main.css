@@ -10,12 +10,12 @@ main {
 	margin-bottom: 1rem;
 }
 
-.latest > h2 {
+.nomarginpadding {
 	padding: 0;
 	margin: 0;
 }
 
-.latest > hr {
+hr {
 	margin-bottom: 1rem;
 }
 

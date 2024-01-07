@@ -1,0 +1,41 @@
+a, li, p, span {
+	word-wrap: break-word;
+}
+
+a {
+	text-decoration: none;
+	color: var(--text);
+	font-weight: bold;
+}
+
+main {
+	padding: 1rem;
+}
+
+.contacts {
+	display: flex;
+	justify-content: space-between;
+}
+
+.contacts > ul {
+	width: 80%;
+}
+
+.contacts > img {
+	width: 20%;
+}
+
+.skills > ul {
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.skills > ul > li {
+	margin: 0.5rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: var(--accent);
+}
