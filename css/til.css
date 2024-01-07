@@ -1,3 +1,11 @@
+a, h1, h2, h3, h4, h5, h6, p, li, input, textarea, button, div {
+	word-wrap: break-word;
+}
+
+.snippet {
+	background-color: var(--accent);
+}
+
 main {
 	display: flex;
 	flex-direction: column;

@@ -35,9 +35,9 @@ tilData.forEach(name => {
 })
 
 // We will use this on the TIL page
-const urlParams = new URLSearchParams(window.location.search)
-const id = urlParams.get("id") ? urlParams.get("id") : ""
-if (id != "") {
+if (document.getElementById("TIL")) {
+	let id = urlParams.get("id") ? urlParams.get("id") : tilData[tilData.length-1]
+	const urlParams = new URLSearchParams(window.location.search)
 	const TIL = document.getElementById("TIL")
 	const prev_next = document.getElementById("prev_next")
 	fetch(`${homeUrl}/til/${id}.html`)
@@ -89,8 +89,7 @@ if (id != "") {
 			break
 	}
 } else {
-	const prev_next = document.getElementById("prev_next")
-	prev_next.remove()
+	console.log("No TIL ID. We are in Home page")
 }
 
 function toggleOtherTil() {

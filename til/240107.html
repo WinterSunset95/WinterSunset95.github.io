@@ -1,0 +1,116 @@
+<h1>Record and play audio with Javascript</h1> <p>Dated: 07/01/2024</p>
+<h4>Tags: </h4>
+<ul>
+	<li>Javascript</li>
+	<li>Html</li>
+</ul>
+<div id="description">
+	Today I learnt how to use the MediaStream Recording API to record audio and play it back.
+</div>
+<div>
+	Bibliography:
+	<ul>
+		<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API">https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Recording_API/Using_the_MediaStream_Recording_API</a></li>
+		<li><a target="_blank" href="https://www.geeksforgeeks.org/how-to-record-and-play-audio-in-javascript/">https://www.geeksforgeeks.org/how-to-record-and-play-audio-in-javascript/</a></li>
+	</ul>
+	<p>
+	To use the MediaStream Recording API, we need to confirm that the browser supports it.
+	</p>
+	<pre><code>if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	// MediaStream Recording API supported
+} else {
+	// MediaStream Recording API not supported
+}</code></pre>
+	<p>
+	If the browser supports it, we continue by setting up the basic getUserMedia structure.
+	</p>
+	<pre><code>if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	navigator.mediaDevices.getUserMedia({ audio: true })
+	.then((stream) => {
+		// Do something with the stream
+	})
+	.catch((err) => {
+		// Error handling
+	})
+})</code></pre>
+	<p>
+	For more details on the getUserMedia function, check out the <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia">MDN documentation</a>.
+	</p>
+	<p>
+	We then create a new Media Recorder instance, passing in the stream we got from getUserMedia. The stream will be
+	captured in a Blob object, in the default format of your browser.
+	</p>
+	<pre><code>const mediaRecorder = new MediaRecorder(stream);</code></pre>
+	<p>
+	We will use the <span class="snippet">start()</span> and <span class="snippet">stop()</span> methods of the MediaRecorder
+	object to record and stop recording respectively. (Again, see the documentation. It's completely worth it)
+	</p>
+	<pre><code>if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	navigator.mediaDevices.getUserMedia({ audio: true })
+	.then((stream) => {
+
+		// "record" and "stop" below are DOM objects
+		record.onclick = () => {
+			mediaRecorder.start();
+			
+			// Other DOM stuff here
+
+		}
+
+		stop.onclick = () => {
+			mediaRecorder.stop();
+
+			// Other DOM stuff here
+
+		}
+
+	})
+	.catch((err) => {
+		// Error handling
+	})
+})</code></pre>
+	<p>
+		Next step is collecting the audio data. The <span class="snippet">mediaRecorder</span> object will fire <span class="snippet">dataavailable</span>
+		events as needed. To listen for this event, use <span class="snippet">ondataavailable</span>. When recording stops,
+		a <span class="snippet">stop</span> event is fired. We use <span class="snippet">onstop</span> to listen for this event.
+		Then we finalize our blob there from all the chunks we have recieved.
+	</p>
+<pre><code>if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	navigator.mediaDevices.getUserMedia({ audio: true })
+	.then((stream) => {
+
+		// "record" and "stop" below are DOM objects
+		record.onclick = () => {
+			mediaRecorder.start();
+			// Other DOM stuff here
+		}
+
+		stop.onclick = () => {
+			mediaRecorder.stop();
+			// Other DOM stuff here
+		}
+
+		let chunks = []
+
+		mediaRecorder.ondataavailable = (e) => {
+			chunks.push(e.data)
+		}
+
+		mediaRecorder.onstop = (e) => {
+			const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+			const audioURL = window.URL.createObjectURL(blob)
+			// "audio" below is a DOM object
+			audio.src = audioURL
+		}
+
+	})
+	.catch((err) => {
+		// Error handling
+	})
+})</code></pre>
+<p>
+	This is a shortened version of the actual code I used for my practice project - <a target="_blank" href="https://wintersunset95.github.io/AudioRecorder">AudioRecorder</a>.
+	<br>
+	Thank you for reading, meet ya on the next one.
+</p>
+</div>
