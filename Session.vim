@@ -21,7 +21,7 @@ badd +5 src/footer.html
 badd +16 css/footer.css
 badd +47 css/style.css
 badd +11 css/navbar.css
-badd +12 js/til.js
+badd +39 js/til.js
 badd +20 404.html
 badd +56 css/til.css
 badd +57 css/about.css
@@ -35,9 +35,9 @@ badd +11 blog/index.html
 argglobal
 %argdel
 $argadd index.html
-edit blog/index.html
+edit js/til.js
 argglobal
-balt projects/index.html
+balt blog/index.html
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -48,12 +48,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 18) / 36)
+let s:l = 27 - ((22 * winheight(0) + 18) / 36)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 050|
+keepjumps 27
+normal! 013|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
