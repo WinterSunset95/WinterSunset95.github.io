@@ -36,8 +36,8 @@ tilData.forEach(name => {
 
 // We will use this on the TIL page
 if (document.getElementById("TIL")) {
-	let id = urlParams.get("id") ? urlParams.get("id") : tilData[tilData.length-1]
 	const urlParams = new URLSearchParams(window.location.search)
+	let id = urlParams.get("id") ? urlParams.get("id") : tilData[tilData.length-1]
 	const TIL = document.getElementById("TIL")
 	const prev_next = document.getElementById("prev_next")
 	fetch(`${homeUrl}/til/${id}.html`)
