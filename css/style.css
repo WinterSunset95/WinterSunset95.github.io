@@ -9,6 +9,15 @@
 	--footer: #1d2d44;
 }
 
+.dark {
+	--primary: #ffffff;
+	--accent: #f2f2f2;
+	--text: #0d1321;
+	--highlight: #748cab;
+	--button: #3e5c76;
+	--footer: #f2f2f2;
+}
+
 * {
 	box-sizing: border-box;
 }
