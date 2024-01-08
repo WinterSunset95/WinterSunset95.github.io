@@ -1,0 +1,55 @@
+<h1>Using grid to responsively add a background image</h1>
+<p>Dated: 03/01/2024</p>
+<h4>Tags: </h4>
+<ul id="tags">
+	<li>CSS</li>
+	<li>Html</li>
+	<li>Tips and Tricks</li>
+</ul>
+<div id="description">
+	Today I learnt how to add a responsive background image using grid.
+</div>
+<div>
+	People use grid to create responsive layouts, but did you know you can use it to add a responsive background image as well?
+
+	<hr><br>
+
+	Consider the following html code:
+	<xmp>
+<body>
+	<div class="background">
+		<img src="img.png" alt="">
+	</div>
+	<div class="hero">
+		<h1>Hero</h1>
+		<p>Hero text</p>
+	</div>
+</body>
+	</xmp>
+
+	By turning the body into a grid container, we can position the .background and .hero elements on top of each other. <br>
+	As shown in the css below:
+	<pre>
+	<code>
+body {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr;
+}
+.background {
+	grid-row: 1 / 3;
+	grid-column: 1 / 3;
+}
+.hero {
+	grid-row: 1 / 3;
+	grid-column: 1 / 3;
+}
+	</code>
+	</pre>
+
+	<hr><br>
+	I mostly use this technique to have more control over the size and position of the background image.
+
+	<hr><br>
+	Here's the codepen example: <a target="_blank" href="https://codepen.io/wintersunset95/full/zYbrVQJ">https://codepen.io/wintersunset95/full/zYbrVQJ</a>
+</div>

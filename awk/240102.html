@@ -1,0 +1,44 @@
+<h1>How to disable pull-to-refresh on mobile devices</h1>
+<p>Dated: 02/01/2024</p>
+<h4>Tags: </h4>
+<ul id="tags">
+	<li>CSS</li>
+	<li>Html</li>
+	<li>Tips and Tricks</li>
+</ul>
+<div id="description">
+	Today I learned how to disable pull-to-refresh on mobile devices.
+</div>
+<div id="intro">
+	I was working on <a target="_blank" href="https://wintersunset95.github.io/MyOnlinePhone">MyOnlinePhone</a>
+	when I came across this problem, pull-to-refresh was conflicting with the swipe gestures.
+
+	<hr>
+	<br>
+
+	On most mobile devices, when you swipe down, it refreshes the page. This is called pull-to-refresh.
+	While being a really handy feature for most websites, it can be a problem for websites that use swipe gestures. <br><br>
+
+	You can use <span style="background-color: var(--accent);">overscroll-behavior: none;</span> to 
+	disable pull-to-refresh 
+
+	<pre>
+	<code>
+html, body {
+	overscroll-behavior: none;
+}
+	</code>
+	</pre>
+
+	<hr><br>
+
+	Note that you have to put it on both the <span style="background-color: var(--accent);">html</span> and <span style="background-color: var(--accent);">body</span> elements
+	for it to work on all browsers. <br><br>
+
+	You can also use <span style="background-color: var(--accent);">touch-action: none;</span> to disable all touch gestures.
+	Although I'm not sure what madman would ever build something that requires this.
+
+	<hr>
+	<br>
+	<strong>Never</strong> use these as default.
+</div>

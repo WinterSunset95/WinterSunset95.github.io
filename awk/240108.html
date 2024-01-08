@@ -1,0 +1,136 @@
+<h1>How to use AudioContext API to manipulate sounds in JavaScript</h1>
+<p>Dated: 08/01/2024</p>
+<div id="description">
+	Today I learnt how to add filters to audio using the AudioContext API.
+</div>
+<h2>Tags: </h2>
+<hr>
+<ul id="tags">
+	<li>JavaScript</li>
+	<li>Html</li>
+</ul>
+<div>
+	<h3>
+		Before we start
+	</h3>
+	<hr>
+	<p>
+	I spent the last couple weeks studying almost non stop and it fucked up my immune system. Woke up this morning with
+	a really bad cold.
+	</p>
+	<img width="100rem" src="https://c.tenor.com/dD-CNrhw-j8AAAAC/tenor.gif" alt="Goma sneezing">
+	<div class="note">
+		<h4>Note:</h4>
+		This post is a part of my <a target="_blank" href="https://wintersunset95.github.io/AudioRecorder">AudioRecorder</a> project.
+		The previous post is <a target="_blank" href="https://wintersunset95.github.io/til/?id=240107">here</a>.
+	</div>
+	<h3>WELL ANYWAYS!!!</h3>
+	<hr>
+	<p>
+	Here is the code where I added a lowshelf filter:
+	</p>
+	<pre><code>function setupFilters(audio) {
+
+	// Basic AudioContext declaration
+	const audioContext = new AudioContext();
+	// "audio" is a DOM object
+	// You'll see how it is passed in the next snippet
+	const source = audioContext.createMediaElementSource(audio);
+
+	const biquadFilter = audioContext.createBiquadFilter();
+	biquadFilter.type = "lowshelf";
+	biquadFilter.frequency.value = 1000;
+
+	// biquadFilterElement is an HTML range input element
+	biquadFilter.gain.value = biquadFilterElement.value;
+	biquadFilterElement.onchange = (e) => {
+		biquadFilter.gain.value = e.target.value;
+	}
+
+	source.connect(biquadFilter);
+	biquadFilter.connect(audioContext.destination);
+}
+</code></pre>
+	<p>
+	I have this function setup which is called everytime an audio element is pushed on the DOM:
+	</p>
+	<pre><code>if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+	navigator.mediaDevices.getUserMedia({ audio: true })
+	.then((stream) => {
+
+		// "record" and "stop" below are DOM objects
+		record.onclick = () => {
+			mediaRecorder.start();
+			// Other DOM stuff here
+		}
+
+		stop.onclick = () => {
+			mediaRecorder.stop();
+			// Other DOM stuff here
+		}
+
+		let chunks = []
+
+		mediaRecorder.ondataavailable = (e) => {
+			chunks.push(e.data)
+		}
+
+		mediaRecorder.onstop = (e) => {
+			const blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+			const audioURL = window.URL.createObjectURL(blob)
+			// "audio" below is a DOM object
+			// Maybe you pulled it in from the DOM
+			// Maybe you created it using document.createElement("audio")
+			// Doesn't matter.. It's a DOM object
+			audio.src = audioURL
+
+			// This is where the setupFilters function is called
+			setupFilters(audio)
+		}
+	})
+
+	.catch((err) => {
+		// Error handling
+	})
+})</code></pre>
+	<h3>Other settings(Is that what theyre called?) you can use:</h3>
+	<hr>
+	<ul>
+		<li>
+			<h4>Gain</h4>
+			<pre><code>const gainNode = audioContext.createGain();</code></pre>
+		</li>
+		<li>
+			<h4>Delay</h4>
+			<pre><code>const delayNode = audioContext.createDelay();</code></pre>
+		</li>
+		<li>
+			<h4>Reverb</h4>
+			<pre><code>const convolverNode = audioContext.createConvolver();</code></pre>
+		</li>
+		<li>
+			<h4>Compressor</h4>
+			<pre><code>const compressorNode = audioContext.createDynamicsCompressor();</code></pre>
+		</li>
+		<li>
+			<h4>Distortion</h4>
+			<pre><code>const distortionNode = audioContext.createWaveShaper();</code></pre>
+		</li>
+		<li>
+			<h4>Panner</h4>
+			<pre><code>const pannerNode = audioContext.createPanner();</code></pre>
+		</li>
+		<li>
+			<h4>Analyzer</h4>
+			<pre><code>const analyzerNode = audioContext.createAnalyser();</code></pre>
+		</li>
+	</ul>
+	<h3>Resources:</h3>
+	<hr>
+	<ul>
+		<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/AudioContext">https://developer.mozilla.org/en-US/docs/Web/API/AudioContext#examples</a></li>
+		<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode">https://developer.mozilla.org/en-US/docs/Web/API/BiquadFilterNode</a></li>
+		<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API</a></li>
+		<li><a target="_blank" href="https://teapuddles.medium.com/adding-a-filter-to-your-sound-with-the-web-audio-api-be95b816290b">https://teapuddles.medium.com/adding-a-filter-to-your-sound-with-the-web-audio-api-be95b816290b</a></li>
+	</ul>
+</div>
