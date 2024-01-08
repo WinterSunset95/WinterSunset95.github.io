@@ -1,0 +1,26 @@
+<h1>Dynamically set title and meta headers with Vanilla Javascript</h1>
+<p>Dated: 06/01/2024</p>
+<h4>Tags: </h4>
+<ul id="tags">
+	<li>Javascript</li>
+	<li>Html</li>
+	<li>Tips and Tricks</li>
+</ul>
+<div id="description">
+	Today I learnt how to dynamically set title and meta headers with Vanilla Javascript.
+</div>
+<div>
+	<p>
+	My TIL page is a single page application, so I needed a way to dynamically set the title and meta headers. Luckily,
+	this was just one google search away.
+	</p>
+	<p>
+	We can use the <span style="background-color: var(--accent);">document.title</span> property to set the title of
+	the page. And for setting the meta description, we can use the following code:
+	<code>document.querySelector("meta[name='description']").setAttribute("content", "This is my description")</code>
+	</p>
+	<hr>
+	<p>
+	<a href="https://github.com/WinterSunset95/wintersunset95.github.io">Here </a> is the source code of my website.
+	</p>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="This is where I document the things I learn daily">
+		<meta name="keywords" content="web developer, fullstack, web development, computer technician, computer repair, computer help, website, website builder, website developer, WinterSunset95, wintersunset95, wintersunset, WinterSunset, Winter Sunset 95, winter sunset 95, winter, wallace thiago">
+		<title>Today I learned</title>
+		<link rel="stylesheet" href="../css/style.css">
+	  	<link rel="stylesheet" href="../css/navbar.css">
+	  	<link rel="stylesheet" href="../css/main.css">
+		<link rel="stylesheet" href="../css/til.css">
+	  	<link rel="stylesheet" href="../css/footer.css">
+		<script src="https://kit.fontawesome.com/eb2155b008.js" crossorigin="anonymous"></script>
+	</head>
+	<body class="light">
+		<div id="doc_root" class="doc_root">
+			<div id="content" class="content">
+
+				<!-- Header will go here -->
+
+				<div class="table_of_contents">
+					<a href="/">Home</a> / <a href="/til/">TIL</a>
+				</div>
+
+				<main>
+					<div id="TIL">
+					</div>
+
+					<div class="other_til_toggle" onclick="toggleOtherTil()">
+						<div class="til_arrow">
+							<i class="fa-solid fa-arrow-right"></i>
+						</div>
+						<div class="til_arrow arrow_hidden">
+							<i class="fa-solid fa-arrow-down"></i>
+						</div>
+						Click to see other posts
+					</div>
+
+					<ul id="other_til" class="til_collapsed">
+						<h2>Read also: </h2>
+					</ul>
+
+					<div id="prev_next"></div>
+
+					<div class="comments">
+						<form class="comment_form" id="comment_form" action="javascript:void(0)" method="POST">
+							<h2>Leave a comment</h2>
+							<textarea class="input_areas" name="comment" id="comment" cols="30" rows="5" placeholder="Comment" required></textarea>
+							<div class="form_submit">
+								<input class="input_areas" type="email" name="email" id="email" placeholder="Name or Email" required>
+								<input type="submit" value="Submit">
+							</div>
+						</form>
+						<div id="comments_list">
+							<h2>
+								Comments system not implemented yet
+							</h2>
+							<p>
+							Sorry for the inconvenience
+							</p>
+						</div>
+					</div>
+				</main>
+
+				<!-- Footer will go here -->
+
+			</div>
+		</div>
+
+		<script src="../js/data.js"></script>
+		<script src="../js/script.js"></script>
+		<script src="../js/til.js"></script>
+	</body>
+</html>
