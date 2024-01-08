@@ -1,0 +1,95 @@
+<h1>Setting up bluetooth in Arch Linux</h1>
+<p>Dated: 09/01/2024</p>
+<div id="description">
+	Today I learnt how to setup Bluetooth in Arch Linux
+</div>
+<h2>Tags: </h2>
+<hr>
+<ul id="tags">
+	<li>Arch Linux</li>
+	<li>Bluetooth</li>
+	<li>Tips and Tricks</li>
+</ul>
+
+<h3>
+	Why Arch Linux?
+</h3>
+<hr>
+<p>
+	It is well known that Archlinux is not a noob friendly distribution. Then why did I choose it? I DIDN'T.
+	I have a REALLY old laptop which I got for free from an uncle. It's got only 2 GB of RAM, a faulty
+	trackpad, a broken keyboard , black spot on the screen, and only ONE working USB port. I had to use Archlinux
+	because of how light it was and how much control it gave me.
+</p>
+
+<h3>
+	Why Bluetooth?
+</h3>
+<hr>
+<p>
+	I have just ONE working USB port. And this is inconvenient when I am working on android stuff because I need
+	to debug through USB. So I decided to use bluetooth for my keyboard.
+</p>
+
+<h3>Basic setup</h3>
+<hr>
+<p>
+Following instructions from the <a target="_blank" href="https://wiki.archlinux.org/title/bluetooth">ArchWiki</a>. 
+I installed the <a href="https://archlinux.org/packages/?name=bluez">bluez</a> and <a href="https://archlinux.org/packages/?name=bluez-utils">bluez-utils</a> packages.
+<code>
+	$ sudo pacman -S bluez bluez-utils
+</code>
+Next, make sure that the btusb module is loaded.
+<code>
+	$ lsmod | grep btusb
+</code>
+<img class="blog_image" src="https://imgur.com/QvqEB2U.png" alt="Output of lsmod | grep btusb">
+Start/enable the bluetooth service.
+</p>
+<pre><code>$ sudo systemctl start bluetooth.service
+$ sudo systemctl enable bluetooth.service</code></pre>
+<div class="note">
+	<h4>Note:</h4>
+	If you use <span class="snippet">enable</span>, the bluetooth service will start automatically on boot.
+</div>
+
+<h3>How do we use it then?</h3>
+<hr>
+<p>
+For my setup, i used <span class="snippet">bluetoothctl</span> for everything bluetooth related.
+<code>
+	$ bluetoothctl
+</code>
+This will open up the bluetoothctl shell.
+Now, we need to power on the bluetooth device.
+<code>
+	[bluetooth]# power on
+</code>
+<img src="https://imgur.com/rDi2AeS.png" alt="bluetoothctl shell">
+Scan for devices.
+<code>
+	[bluetooth]# scan on
+</code>
+List available devices.
+<code>
+	[bluetooth]# devices
+</code>
+<img src="https://imgur.com/asuMwRm.png" alt="bluetoothctl shell"> <br>
+Now, we need to pair with the device.
+<code>
+	[bluetooth]# pair <i>MAC_ADDRESS</i>
+</code>
+</p>
+
+<h3>Done</h3>
+<hr>
+<p>
+This is all I had to do to connect to my bluetooth keyboard. I hope this helps someone. <br>
+Happy Hacking!
+</p>
+
+<h3>Resources: </h3>
+<hr>
+<ul>
+	<li><a href="https://wiki.archlinux.org/title/bluetooth#Configuration">https://wiki.archlinux.org/title/bluetooth#Configuration</a></li>
+</ul>
