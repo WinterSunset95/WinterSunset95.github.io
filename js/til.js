@@ -64,8 +64,8 @@ if (document.getElementById("TIL")) {
 	const link2 = document.createElement('a');
 	switch(indexOfId) {
 		case 0:
-			link.innerHTML = "TIL"
-			link.href = "/til/"
+			link.innerHTML = "Home"
+			link.href = "/"
 			prev_next.appendChild(link)
 			link2.innerHTML = "Next Post"
 			link2.href = `/til/?id=${tilData[indexOfId+1]}`
@@ -75,8 +75,8 @@ if (document.getElementById("TIL")) {
 			link.innerHTML = "Prev Post"
 			link.href = `/til/?id=${tilData[indexOfId-1]}`
 			prev_next.appendChild(link)
-			link2.innerHTML = "TIL"
-			link2.href = `/til/`
+			link2.innerHTML = "Home"
+			link2.href = `/`
 			prev_next.appendChild(link2)
 			break
 		default:
