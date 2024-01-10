@@ -30,14 +30,15 @@ function getTil(filename) {
 }
 
 // Part of the function above
-tilData.forEach(name => {
+const shortenedData = tilData.slice(-10)
+shortenedData.forEach(name => {
 	getTil(name)
 })
 
 // We will use this on the TIL page
 if (document.getElementById("TIL")) {
 	const urlParams = new URLSearchParams(window.location.search)
-	let id = urlParams.get("id") ? urlParams.get("id") : tilData[tilData.length-1]
+	let id = urlParams.get("id") ? urlParams.get("id") : shortenedData[shortenedData.length-1]
 	const TIL = document.getElementById("TIL")
 	const prev_next = document.getElementById("prev_next")
 	fetch(`${homeUrl}/til/${id}.html`)
@@ -53,8 +54,8 @@ if (document.getElementById("TIL")) {
 		})
 	let indexOfId;
 	let nameOfId;
-	let lengthOfArray = tilData.length
-	tilData.forEach((name, index) => {
+	let lengthOfArray = shortenedData.length
+	shortenedData.forEach((name, index) => {
 		if (name == id) {
 			indexOfId = index
 			nameOfId = name
@@ -68,12 +69,12 @@ if (document.getElementById("TIL")) {
 			link.href = "/"
 			prev_next.appendChild(link)
 			link2.innerHTML = "Next Post"
-			link2.href = `/til/?id=${tilData[indexOfId+1]}`
+			link2.href = `/til/?id=${shortenedData[indexOfId+1]}`
 			prev_next.appendChild(link2)
 			break
 		case lengthOfArray-1:
 			link.innerHTML = "Prev Post"
-			link.href = `/til/?id=${tilData[indexOfId-1]}`
+			link.href = `/til/?id=${shortenedData[indexOfId-1]}`
 			prev_next.appendChild(link)
 			link2.innerHTML = "Home"
 			link2.href = `/`
@@ -81,10 +82,10 @@ if (document.getElementById("TIL")) {
 			break
 		default:
 			link.innerHTML = "Prev Post"
-			link.href = `/til/?id=${tilData[indexOfId-1]}`
+			link.href = `/til/?id=${shortenedData[indexOfId-1]}`
 			prev_next.appendChild(link)
 			link2.innerHTML = "Next Post"
-			link2.href = `/til/?id=${tilData[indexOfId+1]}`
+			link2.href = `/til/?id=${shortenedData[indexOfId+1]}`
 			prev_next.appendChild(link2)
 			break
 	}
