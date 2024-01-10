@@ -1,0 +1,214 @@
+<h1>Vim/Neovim tips and tricks for web development</h1>
+<p>Dated: 10/01/2024</p>
+<div id="description">
+	Today I learnt new vim tips and tricks for my web development workflow
+</div>
+<h2>Tags: </h2>
+<hr>
+<ul id="tags">
+	<li>Arch Linux</li>
+	<li>Neovim</li>
+	<li>Vim</li>
+</ul>
+
+<style>
+.neovim-tips-and-tricks > ul > li {
+	margin: 1rem 0;
+}
+</style>
+
+<div class="neovim-tips-and-tricks">
+	<h3 id="neovim-intro">Why Neovim?</h3>
+	<hr>
+	<p>
+	Neovim is light, highly extensible and fast. A perfect match for my potato laptop. With emmet-vim, coc.nvim and
+	a bunch of tricks I have learnt over the past couple years, I code at the speed of thought (I am also quite stupid
+	so "speed of thought" isn't all that fast lol).
+	</p>
+	<p>
+	So today, I learnt how to copy and paste files in Netrw. I will be adding this to my list of tricks.
+	</p>
+
+	<h4>Working with buffers</h4>
+	<hr>
+	<ul id="neovim-buffers-list">
+		<li>
+			So you are editing a file, you want to see what other files you have open?
+			<code>:ls</code>
+		</li>
+		<li>
+			You want to cycle through the open buffers?
+			<code>:b {Tab}</code>
+		</li>
+		<li>
+			Jump to a file that is open in another buffer?
+			<code>:b {a part of the filename}{Tab for autocomplete}</code>
+			Suppose I am in <span class="snippet">index.html</span> and I want to go to my stylesheet which is in 
+			<span class="snippet">styles/main.css</span>, I can type
+			<code>:b main{Tab}</code>
+			Check if it autocompletes, and hit enter. Really useful stuff.
+		</li>
+		<li>
+			Want to close a buffer?
+			<code>:bd {buffername or number}</code>
+			Autocomplete works here too.
+		</li>
+		<li>
+			See what is in your directory and open a new file?
+			<code>:e {Tab}</code>
+			Tab autocomplete is a lifesaver.
+		</li>
+		<li>
+			Switch to the last buffer you were in?
+			<code>Ctrl+Shift+^</code>
+		</li>
+	</ul>
+
+	<h4>Movement using code folding</h4>
+	<hr>
+	<ul id="neovim-folding-list">
+		<li>
+			Toggle a fold
+			<code>za</code>
+		</li>
+		<li>
+			Delete a fold
+			<code>zd</code>
+			<div class="note">
+				Note: You can see the fold markers on the sidebar
+			</div>
+		</li>
+		<li>
+			Code folding based on indentation?
+			<code>:set foldmethod=indent</code>
+		</li>
+		<li>
+			Manually defined code folding (a personal favourite)
+			<code>:set foldmethod=manual</code>
+			Then you visually select the code you want to fold and type zf.
+			<code>{Visual}zf</code>
+			Personally, I go to the beginning of a tag, <span class="snippet">Shift + V</span> to Visually select lines,
+			<span class="snippet">%</span> to jump to the closing tag. And then I make a fold with <span class="snippet">zf</span>
+		</li>
+		<li>
+			Movement within a fold?
+			<code>[z</code> will move to the start of current open fold and
+			<code>]z</code> will move to the end of the currently open fold.
+		</li>
+		<li>
+			Movement between folds?
+			<code>zj</code> will move to the start of the next fold and
+			<code>zk</code> will move to the end of the previous fold.
+		</li>
+	</ul>
+
+	<h4>Windows and Tabs</h4>
+	<hr>
+	<ul id="neovim-windowstabs-list">
+		<li>
+			Open a file/buffer in a new window?
+			<code>:vsp {filename}</code>
+			<code>:vert sb {buffername}</code>
+		</li>
+		<li>
+			Open a file/buffer in a new tab?
+			<code>:tabnew {filename}</code>
+			<code>:tab sb {buffername}</code>
+		</li>
+		<li>
+			Move current window in a new tab?
+			<code>Ctrl+w Shift+T</code>
+		</li>
+		<li>
+			Cycle between Windows
+			<code>Ctrl+w w</code>
+		</li>
+		<li>
+			Cycle between tabs
+			<code>gt</code>
+		</li>
+		<li>
+			Change window position
+			<code>Ctrl+w {H, J, K, L}</code>
+		</li>
+		<li>
+			Resize windows
+			<code>Ctrl+w {+, -, <, >}</code>
+		</li>
+	</ul>
+
+	<h4>Netrw</h4>
+	<hr>
+	<ul id="neovim-netrw-list">
+		<li>
+			Open Netrw
+			<code>:Ex</code>
+		</li>
+		<li>
+			New file
+			<code>%</code>
+		</li>
+		<li>
+			New directory
+			<code>d</code>
+		</li>
+		<li>
+			Open file in vertical split
+			<code>v</code>
+		</li>
+		<li>
+			Mark a file(s)
+			<code>mf</code>
+		</li>
+		<li>
+			Copy marked files
+			<code>mc</code>
+		</li>
+		<li>
+			Preview a file
+			<code>p</code>
+		</li>
+		<li>
+			Execute a file/Open in browser
+			<code>x</code>
+		</li>
+	</ul>
+
+	<h4>Miscellaneous</h4>
+	<hr>
+	<ul>
+		<li>
+			Sometimes I have to use vanilla vim. In those situations, I always remap the Escape key to "jj"
+			<xmp>:inoremap jj <Esc></xmp>
+		</li>
+		<li>
+			Quickly open up your terminal
+			<code>
+				Ctrl+z <br>
+				$ {run command in your terminal} <br>
+				$ fg <br>
+			</code>
+			The fg command will bring you back to vim.
+		</li>
+		<li>
+			If you wanna use terminal mode
+			<code>
+				:tabnew +term
+			</code>
+		</li>
+		<li>
+			Visually select the previous text you selected
+			<code>gv</code>
+		</li>
+		<li>
+			Increment the visual selection
+			<code>Ctrl+Shift+a</code>
+		</li>
+		<li>
+			Increment the visual selection (one increment per line)
+			<code>g Ctrl+Shift+a</code>
+		</li>
+	</ul>
+
+	<h2>This is everything I could think of for now <br>Happy Hacking!!</h2>
+</div>

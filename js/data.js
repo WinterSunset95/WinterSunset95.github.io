@@ -8,6 +8,8 @@ const tilData = [
 	"240107",
 	"240108",
 	"240109",
+	"240110",
+	"240111",
 ]
 
 const projectsData = [

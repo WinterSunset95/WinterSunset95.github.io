@@ -1,0 +1,123 @@
+<h1>Visible and Editable style element</h1>
+<p>Dated: 11/01/2024</p>
+<div id="description">
+	Today I learnt about the contenteditable attribute. I realized that it is possible to make a style element editable and visible.
+</div>
+<h2>Tags: </h2>
+<ul id="tags">
+	<li>CSS</li>
+	<li>HTML</li>
+	<li>Tips and tricks</li>
+</ul>
+
+<h2>The following stylesheet is editable</h2>
+<hr>
+<pre><style class="editable-css" contenteditable="true">.editable-css {
+	display: block;
+	color: var(--text);
+	background-color: black;
+	padding: 1rem;
+	border-radius: 0.5rem;
+}
+
+.contenteditable-h2 {
+	color: var(--text);
+}
+
+.contenteditable-p1 {
+	color: var(--text);
+}
+</style>
+</pre>
+
+<div>
+	<h2 class="contenteditable-h2">Contenteditable</h2>
+	<hr>
+	<p class="contenteditable-p1">
+		The contenteditable attribute specifies whether the content of an element is editable or not.
+		try changing the styles of the header and this paragraph. Their classes are contenteditable-h2 and contenteditable-p1 respectively.
+	</p>
+
+	<h2 class="contenteditable-h2">Playground</h2>
+	<hr>
+	<p class="contenteditable-p1">
+		Below is an image grid (in masonry layout), and its corresponding css. Play around with it and enjoy. (The topic of my next TIL)
+	</p>
+
+	<pre><style class="editable-css" contenteditable="true">.day10-img-grid-container {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	/* The following three lines make it a masonry image layout */
+	columns: 2;
+	column-gap: 1rem;
+	break-inside: avoid;
+}
+
+.day10-img-grid-container > li {
+	width: 100%;
+}
+
+.day10-img-grid-container > li > img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+@media (min-width: 450px) {
+	.day10-img-grid-container {
+		columns: 3;
+	}
+}
+
+@media (min-width: 768px) {
+	.day10-img-grid-container {
+		columns: 4;
+	}
+}
+</style>
+	</pre>
+	<hr>
+
+	<ul class="day10-img-grid-container">
+		<li>
+			<img src="https://picsum.photos/200/300?random=1" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/300/200?random=2" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/400/300?random=3" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/300/300?random=4" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/200/300?random=5" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/500/300?random=6" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/300/500?random=7" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/500/400?random=8" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/200/300?random=9" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/500/300?random=10" alt="">
+		</li>
+		<li>
+			<img src="https://picsum.photos/100/400?random=11" alt="">
+		</li>
+	</ul>
+
+	<div class="note">
+		Note: The pictures are taken from <a href="https://picsum.photos/">Lorem Picsum</a>
+	</div>
+
+</div>

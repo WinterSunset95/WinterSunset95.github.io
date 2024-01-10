@@ -21,13 +21,13 @@ badd +5 src/footer.html
 badd +16 css/footer.css
 badd +47 css/style.css
 badd +11 css/navbar.css
-badd +25 js/til.js
+badd +41 js/til.js
 badd +5 404.html
 badd +13 css/til.css
 badd +57 css/about.css
 badd +6 about/index.html
 badd +6 til/index.html
-badd +98 js/data.js
+badd +94 js/data.js
 badd +20 projects/index.html
 badd +11 blog/index.html
 badd +14 js/projects.js
@@ -35,10 +35,10 @@ badd +26 css/projects.css
 argglobal
 %argdel
 $argadd index.html
-edit js/data.js
+edit js/til.js
 argglobal
-balt css/projects.css
-setlocal fdm=manual
+balt js/data.js
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
@@ -46,14 +46,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 92 - ((21 * winheight(0) + 16) / 32)
+let s:l = 33 - ((15 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 92
-normal! 06|
+keepjumps 33
+normal! 023|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -67,7 +65,6 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
