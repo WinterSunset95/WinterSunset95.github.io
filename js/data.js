@@ -10,6 +10,7 @@ const tilData = [
 	"240109",
 	"240110",
 	"240111",
+	"240118"
 ]
 
 const projectsData = [
