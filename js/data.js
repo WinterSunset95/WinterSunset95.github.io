@@ -78,7 +78,7 @@ const projectsData = [
 	},
 	{
 		title: 'InfoTube',
-		description: 'A youtube clone I built on the invidious api. Everything is purely vanilla. Although it lacks some features, It was a great learning experience',
+		description: 'A youtube clone I built on the invidious api. Although it lacks some features, It was a great learning experience',
 		image: './assets/images/infotube.png',
 		alt: 'InfoTube',
 		link: 'https://wintersunset95.github.io/InfoTube/home/',
@@ -155,7 +155,7 @@ const frontendProjects = [
 	},
 	{
 		title: 'InfoTube',
-		description: 'A youtube clone I built on the invidious api. Everything is purely vanilla. Although it lacks some features, It was a great learning experience',
+		description: 'A youtube clone I built on the invidious api. Although it lacks some features, It was a great learning experience',
 		image: './assets/images/infotube.png',
 		alt: 'InfoTube',
 		link: 'https://wintersunset95.github.io/InfoTube/home/',

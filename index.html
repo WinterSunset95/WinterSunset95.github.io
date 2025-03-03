@@ -13,95 +13,122 @@
 
 </head>
 <body class="light">
-	<div class="background">
-		<div class="mountains">
-			<img src="./assets/mountains.png" alt="">
-		</div>
-		<div class="sunset">
-			<img src="./assets/sunset.jpg" alt="">
-		</div>
-	</div>
-	<div id="container">
-		<div id="one-one" class="block-container">
-			<div>
-				<div id="main-about">
-					<div class="dp-container">
-						<img src="./assets/github_dp.jpg" alt="">
-					</div>
-					<div class="about-info">
-						<h1>Mark Lalthaful Tlau</h1>
-						<p>
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex impedit molestias omnis, sed ratione magni. Recusandae modi quo commodi ex eveniet debitis, tempore nulla illum ipsum distinctio cumque, aperiam nam.
-						</p>
-					</div>
-				</div>
+	<main>
+		<div class="background">
+			<div class="mountains"></div>
+			<div class="sunset">
+				<img src="./assets/images/cafe-at-night.png" alt="">
 			</div>
 		</div>
-		<div id="one-two" class="block-container">
-			<div>
-				there
+		<div id="nav-x">
+			<div class="nav-x-buttons">
+				<button class="nav-x-button">Frontend</button>
+				<button class="nav-x-button">Backend</button>
+				<button class="nav-x-button">Other</button>
 			</div>
 		</div>
-		<div id="one-three" class="block-container">
-			<div>
-				human
+		<div id="nav-y">
+			<div class="nav-y-buttons">
+				<button class="nav-y-button">
+					<i class="fa-solid fa-home"></i>
+				</button>
+				<button class="nav-y-button">2</button>
+				<button class="nav-y-button">3</button>
 			</div>
 		</div>
-
-		<br>
-
-		<div id="two-one" class="block-container">
-			<div>
-				<div class="projects-container">
-					<div class="project" id="project-1">
-					</div>
-					<div class="project" id="project-2">2</div>
-					<div class="project" id="project-3">
-						<h3>Frontend <br> Projects</h3>
-					</div>
-					<div class="project" id="project-4">
-						<h1>What have <br> I built?</h1>
-					</div>
-					<div class="project" id="project-5">5</div>
-					<div class="project" id="project-6">6</div>
-					<div class="project" id="project-7">
-						<h4>
-							Multiple <br> Frameworks
-						</h4>
+		<div id="container">
+			<div id="one-one" class="block-container" data-row="0" data-col="0">
+				<div>
+					<div id="main-about">
+						<div class="dp-container">
+							<img src="./assets/github_dp.jpg" alt="">
+						</div>
+						<div class="about-info">
+							<h1>Mark Lalthaful Tlau</h1>
+							<p>
+								Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex impedit molestias omnis, sed ratione magni. Recusandae modi quo commodi ex eveniet debitis, tempore nulla illum ipsum distinctio cumque, aperiam nam.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div id="two-two" class="block-container">
-			<div>
-				projects backend
+			<div id="one-two" class="block-container" data-row="0" data-col="1">
+				<div>
+					there
+				</div>
 			</div>
-		</div>
-		<div id="two-three" class="block-container">
-			<div>
-				projects other
+			<div id="one-three" class="block-container" data-row="0" data-col="2">
+				<div>
+					human
+				</div>
 			</div>
-		</div>
 
-		<br>
+			<br>
 
-		<div id="three-one" class="block-container">
-			<div>
-				skills frontend
+			<div id="two-one" class="block-container" data-row="1" data-col="0">
+				<div>
+					<div class="projects-container">
+						<div class="project" id="project-1">
+						</div>
+						<div class="project" id="project-2">2</div>
+						<div class="project" id="project-3">
+							<h3>Frontend <br> Projects</h3>
+						</div>
+						<div class="project" id="project-4">
+							<h1>What have <br> I built?</h1>
+						</div>
+						<div class="project" id="project-5">5</div>
+						<div class="project" id="project-6">6</div>
+						<div class="project" id="project-7">
+							<h4>
+								Multiple <br> Frameworks
+							</h4>
+						</div>
+						<div id="screenshot-previewer">
+							<div>
+								<div id="previewer-title">
+									<h4>Click anywhere to exit</h4>
+								</div>
+								<div id="previewer-image">
+									<img src="" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div id="three-two" class="block-container">
-			<div>
-				skills backend
+			<div id="two-two" class="block-container" data-row="1" data-col="1">
+				<div>
+					projects backend
+				</div>
 			</div>
-		</div>
-		<div id="three-three" class="block-container">
-			<div>
-				skills other
+			<div id="two-three" class="block-container" data-row="1" data-col="2">
+				<div>
+					projects other
+				</div>
 			</div>
-		</div>
-	</div>
 
+			<br>
+
+			<div id="three-one" class="block-container" data-row="2" data-col="0">
+				<div>
+					skills frontend
+				</div>
+			</div>
+			<div id="three-two" class="block-container" data-row="2" data-col="1">
+				<div>
+					skills backend
+				</div>
+			</div>
+			<div id="three-three" class="block-container" data-row="2" data-col="2">
+				<div>
+					skills other
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="./js/grabScroll.js"></script>
 	<script src="./js/data.js"></script>
 	<script src="./js/main.js"></script>
 </body>
