@@ -24,22 +24,6 @@ navYButtons.forEach((button, index) => {
 })
 
 const observer = new IntersectionObserver((entries) => {
-	const mainAboutAnimation = [
-		{
-			"width": "0%",
-			padding: "0rem"
-		},
-		{
-			"width": "80%",
-			padding: "2rem"
-		}
-	]
-	const mainAboutAnimationOptions = {
-		duration: 500,
-		fill: "forwards",
-		easing: "cubic-bezier(0.42, 0, 0.58, 1)",
-	}
-
 	entries.forEach(entry => {
 		const id = entry.target.id
 		if (entry.isIntersecting) {
@@ -51,7 +35,6 @@ const observer = new IntersectionObserver((entries) => {
 			navYButtons[entry.target.dataset.row].classList.add("nav-y-button-active")
 			if (id == "one-one") {
 				// one-one: Main page, about me
-				mainAbout.animate(mainAboutAnimation, mainAboutAnimationOptions)
 			} else if (id == "one-two") {
 				// two-one: 
 			} else if (id == "two-one") {
@@ -63,7 +46,6 @@ const observer = new IntersectionObserver((entries) => {
 			}
 		} else {
 			if (id == "one-one") {
-				mainAbout.animate([...mainAboutAnimation].reverse(), mainAboutAnimationOptions)
 			} else if (id == "one-two") {
 				console.log("leave main backend")
 			} else if (id == "two-one") {

@@ -1,0 +1,251 @@
+#main-about {
+	grid-row: 1/13;
+	grid-column: 1/13;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+#main-about > div {
+	border-radius: 0.5rem;
+}
+
+.about-info {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.about-info > div {
+	background-color: var(--primary);
+	height: 100%;
+	border-radius: 0.5rem;
+	padding: 1rem;
+}
+
+.about-programmer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.about-data {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+}
+
+.paragraph {
+	font-size: 0.6rem;
+}
+
+.one-one-skills-container {
+	display: flex;
+	width: 100%;
+	gap: 0.5rem;
+	flex-direction: column;
+}
+
+.one-one-skills-container > * {
+	width: 100%;
+}
+
+.one-one-skills-container > div {
+	display: flex;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.one-one-skills-container > div > h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	border-radius: 0.5rem;
+	background-color: var(--primary);
+	padding: 0.5rem;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	vertical-align: middle;
+	overflow: hidden;
+	transition: all 300ms ease-in-out;
+}
+
+.one-one-skills-container > div > p {
+	padding: 1rem;
+	width: fit-content;
+}
+
+.one-one-skills-container > div:hover > h2 {
+	height: 0%;
+	padding: 0rem;
+}
+
+.one-one-skills-container > ul {
+	flex-grow: 1;
+	gap: 0.5rem;
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-rows: repeat(1,1fr);
+	position: relative;
+}
+
+.one-one-li {
+	grid-column: span 1;
+	grid-row: span 1;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.one-one-li-img-container {
+	height: 4rem;
+	width: 4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.one-one-li-img-container > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	padding: 0.5rem;
+}
+
+.one-one-li-details-container {
+	flex-grow: 1;
+	height: 0;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0;
+	overflow: hidden;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	transform: translateY(110%);
+}
+
+.one-one-li:hover .one-one-li-details-container {
+	height: max-content;
+	z-index: 5;
+	padding: 0.5rem;
+}
+
+.one-one-other-skills {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+.one-one-other-skills > h2 {
+	width: 100%;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.one-one-other-skills-ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.one-one-other-skills-li {
+	flex-grow: 1;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5rem;
+	gap: 0.5rem;
+}
+
+.one-one-other-skills-img-container {
+	width: 4rem;
+	height: 4rem;
+}
+
+.one-one-other-skills-img-container > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+@media only screen and (min-width: 500px) {
+	.one-one-skills-container > ul {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+	}
+	.paragraph {
+		font-size: 0.8rem;
+	}
+	.one-one-li-img-container {
+		padding: 0;
+	}
+	.one-one-li-details-container {
+		position: relative;
+		height: initial;
+		transform: initial;
+		padding: 0.5rem;
+	}
+}
+
+@media only screen and (min-width: 650px) {
+	.one-one-li-img-container {
+		width: 6rem;
+		height: 6rem;
+	}
+}
+
+@media only screen and (min-width: 700px) {
+	.paragraph {
+		font-size: initial;
+	}
+}
+
+@media only screen and (min-width: 800px) {
+	.one-one-li-img-container {
+		width: 10rem;
+		height: 10rem;
+	}
+	.one-one-skills-container > ul {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+}
