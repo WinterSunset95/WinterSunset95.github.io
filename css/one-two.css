@@ -8,8 +8,8 @@
 }
 
 .one-two-header {
-    grid-row: 1/4;
-    grid-column: 1/4;
+    grid-row: span 3;
+    grid-column: span 4;
 }
 
 .one-two-header > * {
@@ -18,19 +18,28 @@
 }
 
 .one-two-desc {
-    grid-row: 1/4;
-    grid-column: 4/13;
+    grid-row: span 3;
+    grid-column: span 8;
     padding: 1rem;
 }
 
 .one-two-header2 {
-    grid-row: 4/5;
-    grid-column: 1/13;
+    grid-row: span 1;
+    grid-column: span 12;
 }
 
 .one-two-expert {
-    grid-row: span 2;
-    grid-column: span 4;
+    grid-row: span 4;
+    grid-column: span 12;
+}
+.one-two-header3 {
+    grid-row: span 1;
+    grid-column: span 12;
+}
+
+.one-two-learning {
+    grid-row: span 3;
+    grid-column: span 12;
 }
 
 @media only screen and (min-width: 650px) {
