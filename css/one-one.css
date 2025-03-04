@@ -1,3 +1,25 @@
+@keyframes one-one-intro {
+	from {
+		opacity: 0;
+		transform: translateY(5rem);
+	} to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes one-one-outro {
+	from {
+		opacity: 1;
+	} to {
+		opacity: 0;
+	}
+}
+
+.one-one-animated {
+	opacity: 0;
+}
+
 #main-about {
 	grid-row: 1/13;
 	grid-column: 1/13;
@@ -41,7 +63,7 @@
 }
 
 .paragraph {
-	font-size: 0.6rem;
+	font-size: clamp(0.1rem, calc(1dvh + 1dvw), 1.2rem);
 }
 
 .one-one-skills-container {
@@ -116,44 +138,53 @@
 
 .one-one-li-img-container {
 	height: 4rem;
-	width: 4rem;
+	height: 4rem;
+	aspect-ratio: 1/1;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
 	background-color: var(--primary);
 	border-radius: 0.5rem;
 	overflow: hidden;
 }
 
 .one-one-li-img-container > img {
-	width: 100%;
 	height: 100%;
+	width: 100%;
 	object-fit: contain;
 	padding: 0.5rem;
 }
 
-.one-one-li-details-container {
-	flex-grow: 1;
-	height: 0;
+#one-one-li-details-container-sm {
 	position: absolute;
+	width: 100%;
+	height: 0;
+	top: 0rem;
+	left: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	gap: 0.5rem;
-	padding: 0;
-	overflow: hidden;
-	bottom: 0;
-	left: 0;
-	z-index: 0;
 	background-color: var(--primary);
 	border-radius: 0.5rem;
-	transform: translateY(110%);
+	padding: 0 0.5rem;
+	overflow: hidden;
 }
 
-.one-one-li:hover .one-one-li-details-container {
-	height: max-content;
-	z-index: 5;
+
+
+#one-one-li-details-container-sm > .one-one-li-details-container {
+	display: flex;
+}
+
+.one-one-li-details-container {
+	flex-grow: 1;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
 	padding: 0.5rem;
 }
 
@@ -212,14 +243,14 @@
 		grid-template-columns: repeat(1, 1fr);
 		grid-template-rows: repeat(4, 1fr);
 	}
-	.paragraph {
-		font-size: 0.8rem;
+	#one-one-li-details-container-sm {
+		display: none;
 	}
 	.one-one-li-img-container {
 		padding: 0;
 	}
 	.one-one-li-details-container {
-		position: relative;
+		display: flex;
 		height: initial;
 		transform: initial;
 		padding: 0.5rem;
@@ -230,12 +261,6 @@
 	.one-one-li-img-container {
 		width: 6rem;
 		height: 6rem;
-	}
-}
-
-@media only screen and (min-width: 700px) {
-	.paragraph {
-		font-size: initial;
 	}
 }
 

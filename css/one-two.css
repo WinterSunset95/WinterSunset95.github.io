@@ -1,0 +1,40 @@
+#one-two > div > div {
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one-two-header {
+    grid-row: 1/4;
+    grid-column: 1/4;
+}
+
+.one-two-header > * {
+    text-align: center;
+    font-size: calc(1dvh + 1dvw);
+}
+
+.one-two-desc {
+    grid-row: 1/4;
+    grid-column: 4/13;
+    padding: 1rem;
+}
+
+.one-two-header2 {
+    grid-row: 4/5;
+    grid-column: 1/13;
+}
+
+.one-two-expert {
+    grid-row: span 2;
+    grid-column: span 4;
+}
+
+@media only screen and (min-width: 650px) {
+    .one-two-expert {
+        grid-column: span 2;
+    }
+}

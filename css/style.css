@@ -206,6 +206,16 @@ p {
 	font-size: 0.6;
 }
 
+.content-unfinished {
+	grid-row: span 12;
+	grid-column: span 12;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--primary);
+	border-radius: 0.5rem;
+}
+
 @media only screen and (min-width: 650px) {
 	h1 {
 		font-size: 1.5rem;
