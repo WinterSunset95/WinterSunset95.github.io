@@ -176,8 +176,8 @@ main {
 
 #container > div > div {
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: repeat(12, 1fr);
+	grid-template-columns: repeat(12, minmax(00.1fr, 2fr));
+	grid-template-rows: repeat(12, minmax(00.1fr, 2fr));
 	border-radius: 1rem;
 	white-space: initial;
 	width: 100%;
