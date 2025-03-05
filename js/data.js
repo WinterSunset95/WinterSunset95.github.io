@@ -138,12 +138,12 @@ const frontendProjects = [
 	{},
 	{},
 	{
-		title: 'Animated Flower',
-		description: 'Vanilla javascript project. An animated flower without using any canvas elements.',
-		image: './assets/images/flower.jpeg',
-		alt: 'Animated Flower',
-		link: 'https://wintersunset95.github.io/Flower4u',
-		projectLink: "https://github.com/WinterSunset95/Flower4u",
+		title: 'InfoTube',
+		description: 'A youtube clone I built on the invidious api. Although it lacks some features, It was a great learning experience',
+		image: './assets/images/infotube.png',
+		alt: 'InfoTube',
+		link: 'https://wintersunset95.github.io/InfoTube/home/',
+		projectLink: "https://github.com/WinterSunset95/InfoTube",
 		status: 'Completed',
 		tech: ["html5-logo.png", "w3_css-icon~old.svg", "javascript-icon.svg"]
 	},
@@ -158,12 +158,12 @@ const frontendProjects = [
 		tech: ["html5-logo.png", "w3_css-icon~old.svg", "javascript-icon.svg"]
 	},
 	{
-		title: 'InfoTube',
-		description: 'A youtube clone I built on the invidious api. Although it lacks some features, It was a great learning experience',
-		image: './assets/images/infotube.png',
-		alt: 'InfoTube',
-		link: 'https://wintersunset95.github.io/InfoTube/home/',
-		projectLink: "https://github.com/WinterSunset95/InfoTube",
+		title: 'Animated Flower',
+		description: 'Vanilla javascript project. An animated flower without using any canvas elements.',
+		image: './assets/images/flower.jpeg',
+		alt: 'Animated Flower',
+		link: 'https://wintersunset95.github.io/Flower4u',
+		projectLink: "https://github.com/WinterSunset95/Flower4u",
 		status: 'Completed',
 		tech: ["html5-logo.png", "w3_css-icon~old.svg", "javascript-icon.svg"]
 	},

@@ -89,6 +89,7 @@
 
 .project-name-container > h1 {
 	font-size: clamp(0.5rem, calc(2dvh + 2dvw), 1.5rem);
+	text-align: center;
 }
 
 .project-tech-container {
@@ -151,7 +152,7 @@
 }
 
 .project-data-container > h4 {
-	font-size: clamp(0.5rem, calc(1dvh + 1dvw), 1.5rem);
+	font-size: clamp(0.5rem, calc(1dvh + 1dvw), 1rem);
 }
 
 .buttons {
@@ -242,7 +243,7 @@
 
 #project-2 {
 	grid-row: 4 / 7;
-	grid-column: 5 / 13;
+	grid-column: span 6;
 }
 
 @keyframes project-3-enter {
@@ -293,7 +294,7 @@
 
 #project-4 {
 	grid-row: 4 / 6;
-	grid-column: 1 / 5;
+	grid-column: span 6;
 }
 
 @keyframes project-5-enter {
@@ -318,7 +319,7 @@
 
 #project-5 {
 	grid-row: 7 / 10;
-	grid-column: 5 / 13;
+	grid-column: span 6;
 }
 
 @keyframes project-6-enter {
@@ -368,7 +369,7 @@
 
 #project-7 {
 	grid-row: 6 / 10;
-	grid-column: 1 / 5;
+	grid-column: span 6;
 }
 
 @media only screen and (min-width: 650px) {

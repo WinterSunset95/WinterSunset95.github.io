@@ -56,13 +56,13 @@
 }
 
 .about-programmer h1 {
-	font-size: calc(2dvh + 2dvw);
+	font-size: clamp(0.5rem, calc(2dvh + 2dvw), 2rem);
 }
 .about-programmer h2 {
-	font-size: calc(1.5dvh + 1.5dvw);
+	font-size: clamp(0.5rem, calc(1.5dvh + 1.5dvw), 1.75rem);
 }
 .about-programmer h4 {
-	font-size: calc(1dvh + 1dvw);
+	font-size: clamp(0.5rem, calc(1dvh + 1dvw), 1.5rem);
 }
 
 .about-data {
@@ -74,7 +74,7 @@
 }
 
 .paragraph {
-	font-size: calc(1dvh + 1dvw);
+	font-size: clamp(0.1rem, calc(1dvh + 1dvw), 1.25rem);
 }
 
 .one-one-li-details-container > .paragraph {
