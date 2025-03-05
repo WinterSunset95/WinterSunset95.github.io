@@ -7,12 +7,24 @@ frontendProjectsList.forEach((item, index) => {
 	if (!frontendProjects[index]) return
 	const currData = frontendProjects[index];
 	if (!currData.title) return;
+	const placeholderDiv = document.createElement("div")
+	currData.tech.forEach((link, index) => {
+		const containerDiv = document.createElement("div")
+		containerDiv.classList.add("project-tech-img-container")
+		const imageElement = document.createElement("img")
+		imageElement.setAttribute("src", `./assets/images/${link}`)
+		containerDiv.appendChild(imageElement)
+		placeholderDiv.appendChild(containerDiv)
+	})
 	const template = `
 		<div class="project-img-container">
 			<img src="${currData.image}" alt="${currData.alt}">
 		</div>
 		<div class="project-name-container">
 			<h1>${currData.title}</h1>
+			<div class="project-tech-container">
+				${placeholderDiv.innerHTML}
+			</div>
 		</div>
 		<div class="project-data-container">
 			<h4>${currData.description}</h4>

@@ -186,26 +186,6 @@ main {
 	position: relative;
 }
 
-h1 {
-	font-size: 1rem;
-}
-
-h2 {
-	font-size: 0.9rem;
-}
-
-h3 {
-	font-size: 0.8rem;
-}
-
-h4 {
-	font-size: 0.7rem;
-}
-
-p {
-	font-size: 0.6;
-}
-
 .content-unfinished {
 	grid-row: span 12;
 	grid-column: span 12;
@@ -214,24 +194,6 @@ p {
 	align-items: center;
 	background-color: var(--primary);
 	border-radius: 0.5rem;
-}
-
-@media only screen and (min-width: 650px) {
-	h1 {
-		font-size: 1.5rem;
-	}
-	h2 {
-		font-size: 1.3rem;
-	}
-	h3 {
-		font-size: 1.1rem;
-	}
-	h4 {
-		font-size: 0.9rem;
-	}
-	p {
-		font-size: initial;
-	}
 }
 
 #nav-x {

@@ -21,7 +21,7 @@ const projectsData = [
 		alt: 'ChatApp',
 		link: 'https://replit.com/@Winter95/chatApp',
 		projectLink: "https://github.com/WinterSunset95/chatApp",
-		status: 'Completed'
+		status: 'Completed',
 	},
 	{
 		title: 'Analog Clock',
@@ -122,7 +122,8 @@ const frontendProjects = [
 		alt: 'SvelteTube',
 		link: 'https://svelte-tube.vercel.app',
 		projectLink: "https://github.com/WinterSunset95/SvelteTube",
-		status: 'Ongoing'
+		status: 'Ongoing',
+		tech: ["svelte-logo.svg", "socketio-ar21.svg"]
 	},
 	{
 		title: 'PeekABoo',
@@ -131,7 +132,8 @@ const frontendProjects = [
 		alt: 'PeekABoo',
 		link: 'https://github.com/WinterSunset95/PeekABoo',
 		projectLink: "https://github.com/WinterSunset95/PeekABoo",
-		status: 'Ongoing'
+		status: 'Ongoing',
+		tech: ["ionicframework-ar21.svg", "react-logo.png", "capacitorjs-ar21.svg"]
 	},
 	{},
 	{},
@@ -142,7 +144,8 @@ const frontendProjects = [
 		alt: 'Animated Flower',
 		link: 'https://wintersunset95.github.io/Flower4u',
 		projectLink: "https://github.com/WinterSunset95/Flower4u",
-		status: 'Completed'
+		status: 'Completed',
+		tech: ["html5-logo.png", "w3_css-icon~old.svg", "javascript-icon.svg"]
 	},
 	{
 		title: 'Dolur Memorial',
@@ -151,7 +154,8 @@ const frontendProjects = [
 		alt: 'Dolur Memorial',
 		link: 'https://wintersunset95.github.io/dolurmemorial/',
 		projectLink: "https://github.com/WinterSunset95/dolurmemorial",
-		status: 'Completed'
+		status: 'Completed',
+		tech: ["html5-logo.png", "w3_css-icon~old.svg", "javascript-icon.svg"]
 	},
 	{
 		title: 'InfoTube',
@@ -160,7 +164,8 @@ const frontendProjects = [
 		alt: 'InfoTube',
 		link: 'https://wintersunset95.github.io/InfoTube/home/',
 		projectLink: "https://github.com/WinterSunset95/InfoTube",
-		status: 'Completed'
+		status: 'Completed',
+		tech: ["html5-logo.png", "w3_css-icon~old.svg", "javascript-icon.svg"]
 	},
 ]
 
