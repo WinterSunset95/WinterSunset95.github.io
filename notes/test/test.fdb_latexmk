@@ -1,0 +1,12 @@
+# Fdb version 4
+["latex"] 1746917654.85388 "test.tex" "test.dvi" "test" 1746917661.4457 2
+  "/usr/share/texmf-dist/tex/latex/l3backend/l3backend-dvips.def" 1742685315 35454 e0048b54d7d6f7c79a7bd63a786c3eee ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1742685315 42087 b0f9697c952c8f5a8eede4134282cb0d ""
+  "/var/lib/texmf/web2c/pdftex/latex.fmt" 1746876750 2008181 448478495762dab1dd4849e7515f1a55 ""
+  "test.aux" 1746917661.42978 32 3985256e7290058c681f74d7a3565a19 "latex"
+  "test.tex" 1746917575.39777 265 9453e697e6b4f16ec8a62319be0c2bd6 ""
+  (generated)
+  "test.aux"
+  "test.dvi"
+  "test.log"
+  (rewritten before read)

@@ -1,0 +1,13 @@
+PWD /home/autumn/Apache/wintersunset95.github.io/notes/test
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/latex.fmt
+INPUT test.tex
+OUTPUT test.log
+INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+INPUT ./test.aux
+INPUT ./test.aux
+INPUT test.aux
+OUTPUT test.aux
+OUTPUT test.dvi
+INPUT test.aux

@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{amsmath}
+\title{Day 2}
+\author{WinterSunset95}
+\date{10th May 2025}
+\begin{document}
+\maketitle
+\section{Index}
+\begin{enumerate}
+	\item A1
+	\begin{enumerate}
+		\item Determinants
+		\item Minors and Cofactors
+		\item Application of Determinants
+		\item Inverse of a Matrix
+		\item Solving simultaneous linear equations
+	\end{enumerate}
+	\item B2
+	\begin {enumerate}
+		\item Allegation and Mixture
+		\item Basic numerical problems
+	\end{enumerate}
+\end{enumerate}
+
+\section{Calculations}
+\[
+	P = \begin{bmatrix}
+		-3 & 4 \\
+		2 & -5
+	\end{bmatrix}
+\]
+	\begin{align*}
+		|P| &= ad - bc \\
+			&= -3(-5) - 4(2) = 7 \\
+	\end{align*}
+
+Ex. Area of triange with vertices P(0,1), Q(2,3), R(4,0) \\
+Solution: The matrix A formed by the coordinates is 
+\[
+A = \begin{bmatrix}
+		0 & 1 & 1 \\
+		2 & 3 & 1 \\
+		4 & 0 & 1
+	\end{bmatrix} \\
+\]
+Now, \\
+\begin{math}\begin{aligned}
+|A| &= a_{11} c_{11} + a_{12} c_{12} + a_{13} c_{13} \\
+c_{11} &= (-1)^{1+1} det\begin{bmatrix}
+						3 & 1 \\
+						0 & 1
+					\end{bmatrix} \\
+	&= 1x(3x1)-0 = 3\\
+c_{12} &= (-1)^{1+2} det\begin{bmatrix}
+						2 & 1 \\
+						4 & 1
+					\end{bmatrix} \\
+	&= -1(2-4) = 2\\
+c_{13} &= (-1)^{1+3} det\begin{bmatrix}
+						2 & 3 \\
+						4 & 0
+					\end{bmatrix} \\
+	&= 1(0-12) = -12\\
+So, \\
+|A| &= 0x3 + 1x2 + 1(-12) \\
+	&= 2-12 = -10 \\
+\end{aligned}\end{math}
+Therefore, \\
+Area = 1/2|A| = 1/2(-10) = -5 \\
+
+Ex. Find the inverse of A = \begin{bmatrix}
+							3 & 1 \\
+							4 & 2
+						\end{bmatrix} \\
+Solution: Firstly, \\
+\begin{math}\begin{aligned}
+	|A| &= ad - bc \\
+		&= (3x2) - (1x4) = 6-4 = 2 \\
+\end{aligned}\end{math} \\
+
+Here, |A| != 0, therefore A' exists. \\
+\begin{math}\begin{aligned}
+adj(A) &= \begin{bmatrix}
+			d & -b \\
+			-c & a
+		\end{bmatrix} \\
+	   &= \begin{bmatrix}
+			2 & -1 \\
+			-4 & 3
+		\end{bmatrix} \\
+\end{aligned}\end{math}
+Now, \\
+\begin{math}\begin{aligned}
+	A' &= \frac{1}{|A|} adj(A) \\
+		&= \frac{1}{2} \begin{bmatrix}
+			2 & -1 \\
+			-4 & 3
+		\end{bmatrix} \\
+		&= \begin{bmatrix}
+			1 & -\frac{1}{2} \\
+			-2 & \frac{3}{2}
+		\end{bmatrix} \\
+\end{aligned}\end{math}
+
+\begin{bmatrix}
+	3 & 1 \\
+	4 & 2
+\end{bmatrix}
+\begin{bmatrix}
+	x \\
+	y
+	\end{bmatrix} = \begin{bmatrix}
+	7 \\
+	10
+	\end{bmatrix}
+
+\end{document}
+
+I did it this way, letting p be Priya's current age and r be Rina's current age.
+so p/r = 3/4
+=> p = 3r/4
+
+now, 5 years ago, their ages were in the ratio 5/7
+=> (p-5)/(r-5) = 5/7
+=> ((3r)/4 - 5)/(r-5) = 5/7
+=> (3r-20)/4 = 5r-25)/7
+=> 7(3r-20) = 4(5r-25)
+=> 21r - 140 = 20r - 100
+=> r = 40
+
+now, 
+p/r = 3/4
+=> p = 3r/4 = 120/4 = 30
