@@ -1,21 +1,22 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = themeToggleBtn.querySelector('i');
-    
-    if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches === false)) {
-        document.body.classList.add('light-mode');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    if (themeToggleBtn) {
+        const themeIcon = themeToggleBtn.querySelector('i');
+        if (localStorage.getItem('theme') === 'light' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches === false)) {
+            document.body.classList.add('light-mode');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            themeIcon.classList.replace(isLight ? 'fa-moon' : 'fa-sun', isLight ? 'fa-sun' : 'fa-moon');
+        });
     }
 
-    themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const isLight = document.body.classList.contains('light-mode');
-        localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        themeIcon.classList.replace(isLight ? 'fa-moon' : 'fa-sun', isLight ? 'fa-sun' : 'fa-moon');
-    });
-
-    // 2. Routing & Data Fetching
+    // 2. Routing & Data Fetching (The Double-Fetch Fallback)
     const urlParams = new URLSearchParams(window.location.search);
     const role = urlParams.get('role');
     let resumeData = null;
@@ -135,6 +136,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function hydratePrintTemplate(data) {
+        if(!document.getElementById('print-name')) return;
         document.getElementById('print-name').textContent = data.basics.name;
         document.getElementById('print-title').textContent = data.basics.title;
         
@@ -147,13 +149,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         document.getElementById('print-summary').innerHTML = `<p>${data.basics.bio}</p>`;
 
-        // Skills as a clean comma-separated list
         if(data.skills) {
             const skillString = data.skills.map(s => s.name).join(', ');
             document.getElementById('print-skills').innerHTML = `<p><strong>Core Technologies:</strong> ${skillString}</p>`;
         }
 
-        // Experience
         if(data.experience) {
             let expHTML = '';
             data.experience.forEach(job => {
@@ -169,7 +169,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('print-experience').innerHTML = expHTML;
         }
 
-        // Projects
         if(data.projects) {
             let projHTML = '';
             data.projects.forEach(proj => {
@@ -191,7 +190,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('print-projects').innerHTML = projHTML;
         }
 
-        // Education
         if(data.education) {
             let eduHTML = '';
             data.education.forEach(edu => {
@@ -212,13 +210,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             const navUI = document.getElementById('main-nav');
             const printTemplate = document.getElementById('print-template');
             
-            // Swap visibility temporarily to allow html2pdf to render the hidden template
             mainUI.style.display = 'none';
             navUI.style.display = 'none';
             printTemplate.style.display = 'block';
 
             const opt = {
-                margin:       12, // Standard 12mm margins
+                margin:       12,
                 filename:     `Mark_Tlau_Resume_${role || 'General'}.pdf`,
                 image:        { type: 'jpeg', quality: 1 },
                 html2canvas:  { scale: 2, useCORS: true },
@@ -226,11 +223,102 @@ document.addEventListener('DOMContentLoaded', async () => {
             };
 
             html2pdf().set(opt).from(printTemplate).save().then(() => {
-                // Instantly swap back
                 printTemplate.style.display = 'none';
                 mainUI.style.display = 'block';
                 navUI.style.display = 'flex';
             });
         });
+    }
+
+    // --- HOMELAB STATUS DASHBOARD ENGINE ---
+    // Only run this if we are on the Gateway page
+    const statusGrid = document.getElementById('status-grid');
+    if (statusGrid) {
+        // Define your infrastructure with descriptions
+        const services = [
+            { id: 'omnitools', name: 'Omni Tools', url: 'https://omnitools.wintersunset95.in', type: 'web', icon: 'fa-wrench', description: 'Collection of handy developer utilities running entirely in the browser.' },
+            { id: 'sveltetube', name: 'SvelteTube', url: 'https://sveltetube.wintersunset95.in', type: 'web', icon: 'fa-film', description: 'High-speed media aggregator mapping TMDB APIs to external streaming providers.' },
+            { id: 'peekaboo', name: 'Peekaboo PWA', url: 'https://peekaboo.wintersunset95.in', type: 'web', icon: 'fa-video', description: 'WebRTC watch-party clone with persistent chat and low-latency P2P synchronization.' },
+            { id: 'owncast', name: 'Owncast Livestream', url: 'https://owncast.wintersunset95.in', type: 'owncast', icon: 'fa-broadcast-tower', description: 'Self-hosted live video streaming and chat server.' }
+        ];
+
+        async function checkServiceStatus(service) {
+            if (service.type === 'owncast') {
+                try {
+                    // Owncast API returns {"online": true/false} indicating if stream is live
+                    const res = await fetch(`${service.url}/api/status`);
+                    if (!res.ok) throw new Error('API Unreachable');
+                    const data = await res.json();
+                    return { server: 'online', stream: data.online ? 'live' : 'offline' }; 
+                } catch (e) {
+                    return { server: 'offline', stream: 'offline' }; 
+                }
+            } else {
+                return new Promise((resolve) => {
+                    // The Favicon Hack: Bypass CORS by loading an image
+                    const img = new Image();
+                    img.onload = () => resolve({ server: 'online' });
+                    img.onerror = () => resolve({ server: 'offline' });
+                    // Add timestamp to prevent browser from reading a cached successful ping
+                    img.src = `${service.url}/favicon.ico?cb=${new Date().getTime()}`;
+                    setTimeout(() => resolve({ server: 'offline' }), 5000);
+                });
+            }
+        }
+
+        async function renderDashboard() {
+            let html = '';
+            
+            const results = await Promise.all(services.map(async (service) => {
+                const statusObj = await checkServiceStatus(service);
+                return { ...service, status: statusObj };
+            }));
+
+            results.forEach(svc => {
+                let serverText = svc.status.server === 'online' ? 'Server Online' : 'Server Offline';
+                
+                // Build the dual badges wrapper
+                let indicatorsHtml = `
+                    <div class="status-indicator status-${svc.status.server}">
+                        <span class="dot"></span> ${serverText}
+                    </div>
+                `;
+
+                // If it's owncast, inject the second stream badge
+                if (svc.type === 'owncast') {
+                    let streamText = svc.status.stream === 'live' ? 'Stream Live' : 'Stream Offline';
+                    let streamClass = svc.status.stream === 'live' ? 'live' : 'offline';
+                    indicatorsHtml += `
+                        <div class="status-indicator status-${streamClass}">
+                            <span class="dot"></span> ${streamText}
+                        </div>
+                    `;
+                }
+
+                html += `
+                    <a href="${svc.url}" target="_blank" class="card status-card gateway-card">
+                        <div class="status-info">
+                            <i class="fa-solid ${svc.icon}"></i>
+                            <div>
+                                <h3>${svc.name}</h3>
+                                <p class="svc-url">${svc.url.replace('https://', '')}</p>
+                                <p class="svc-desc">${svc.description}</p>
+                            </div>
+                        </div>
+                        <div class="status-indicators-wrapper">
+                            ${indicatorsHtml}
+                        </div>
+                    </a>
+                `;
+            });
+
+            statusGrid.innerHTML = html;
+        }
+
+        // Initialize the dashboard
+        renderDashboard();
+        
+        // Auto-refresh ping every 30 seconds
+        setInterval(renderDashboard, 30000);
     }
 });

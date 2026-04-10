@@ -11,48 +11,64 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/eb2155b008.js" crossorigin="anonymous"></script>
 </head>
-<body class="gateway-body">
-    <!-- Theme Toggle -->
-    <div style="position: absolute; top: 1rem; right: 2rem;">
+<body>
+    <div style="position: fixed; top: 1.5rem; right: 2rem; z-index: 1000;">
         <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
     </div>
 
-    <div class="gateway-container">
-        <div class="text-center" style="margin-bottom: 4rem;">
-            <h1 style="font-size: 3rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-terminal" style="color: var(--accent);"></i> Mark L F Tlau</h1>
-            <p class="subtitle" style="font-size: 1.2rem;">Select Professional Persona</p>
-        </div>
+    <section class="gateway-section" id="personas">
+        <div class="gateway-container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h1 style="font-size: 3rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-terminal" style="color: var(--accent);"></i> Mark L F Tlau</h1>
+                <p class="subtitle" style="font-size: 1.2rem;">Select Professional Persona</p>
+            </div>
 
-        <div class="grid">
-            <!-- Notice the URL parameters replacing the hardcoded HTML files -->
-            <a href="./portfolio.html?role=sysadmin" class="card gateway-card text-center">
-                <i class="fa-solid fa-server card-icon" style="font-size: 3rem;"></i>
-                <h3>IT & Systems Administration</h3>
-                <p>High-availability clusters, network defense, Linux server administration, and DevOps infrastructure.</p>
-            </a>
-
-            <a href="./portfolio.html?role=fullstack" class="card gateway-card text-center">
-                <i class="fa-solid fa-code card-icon" style="font-size: 3rem;"></i>
-                <h3>Fullstack Engineering</h3>
-                <p>Progressive Web Apps, real-time WebRTC architecture, and high-performance SvelteKit/Go backends.</p>
-            </a>
-
-            <a href="./portfolio.html?role=automation" class="card gateway-card text-center">
-                <i class="fa-solid fa-microchip card-icon" style="font-size: 3rem;"></i>
-                <h3>Automation & Systems Programming</h3>
-                <p>Pure C/C++ CLI tools, Python data scraping, Excel automation, and low-level protocol engineering.</p>
-            </a>
-        </div>
-        
-        <div class="text-center" style="margin-top: 4rem;">
-            <div class="contact-bar" style="justify-content: center; font-size: 0.9rem;">
-                <a href="https://wa.me/916009341754" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 6009341754</a>
-                <a href="mailto:wintersunset95@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
-                <a href="https://github.com/WinterSunset95" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-                <a href="https://linkedin.com/in/mark-tlau" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <div class="grid">
+                <a href="./portfolio.html?role=sysadmin" class="card gateway-card text-center">
+                    <i class="fa-solid fa-server card-icon" style="font-size: 3rem;"></i>
+                    <h3>IT & Systems Administration</h3>
+                </a>
+                <a href="./portfolio.html?role=fullstack" class="card gateway-card text-center">
+                    <i class="fa-solid fa-code card-icon" style="font-size: 3rem;"></i>
+                    <h3>Fullstack Engineering</h3>
+                </a>
+                <a href="./portfolio.html?role=automation" class="card gateway-card text-center">
+                    <i class="fa-solid fa-microchip card-icon" style="font-size: 3rem;"></i>
+                    <h3>Automation & Systems</h3>
+                </a>
+            </div>
+            
+            <div class="text-center" style="margin-top: 4rem;">
+                <div class="contact-bar" style="justify-content: center; font-size: 0.9rem;">
+                    <a href="https://wa.me/916009341754" target="_blank"><i class="fa-brands fa-whatsapp"></i> +91 6009341754</a>
+                    <a href="mailto:wintersunset95@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+                    <a href="https://github.com/WinterSunset95" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
             </div>
         </div>
-    </div>
+
+        <a href="#services" class="scroll-arrow">
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <section class="gateway-section bg-alt" id="services">
+        <a href="#personas" class="scroll-up-arrow"><i class="fa-solid fa-chevron-up"></i></a>
+        <div class="gateway-container">
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Infrastructure Status</h2>
+                <p class="subtitle" style="font-size: 1.1rem;">Live monitoring of self-hosted services bypassing CGNAT.</p>
+            </div>
+
+            <div class="grid" id="status-grid">
+                <div class="text-center" style="grid-column: 1 / -1; padding: 2rem;">
+                    <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 2rem; color: var(--accent);"></i>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">Pinging Edge Servers...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script src="./js/script.js"></script>
 </body>
 </html>

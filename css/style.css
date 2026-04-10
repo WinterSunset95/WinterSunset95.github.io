@@ -33,6 +33,7 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
 }
 
 body.light-mode .hero h1,
@@ -43,12 +44,6 @@ body.light-mode .card h3 { color: #0f172a; }
 .nav-container { width: 90%; max-width: 1100px; margin: 0 auto; padding: 0; display: flex; justify-content: space-between; align-items: center; }
 
 .text-center { text-align: center; }
-
-/* Gateway Hub Specifics */
-.gateway-body { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
-.gateway-container { width: 100%; max-width: 1200px; padding: 2rem; }
-.gateway-card { text-decoration: none; cursor: pointer; display: block; }
-.gateway-card:hover { border-color: var(--accent); transform: translateY(-5px); }
 
 /* Navbar */
 .navbar {
@@ -94,18 +89,157 @@ body.light-mode .navbar { background-color: rgba(248, 250, 252, 0.95); }
 /* Sections */
 .section { padding: 4rem 0; }
 .bg-alt { background-color: var(--bg-alt); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-.section-title { font-size: 2rem; color: #ffffff; margin-bottom: 3rem; }
+.section-title { font-size: 2rem; color: #ffffff; margin-bottom: 3rem; text-align: center; }
 
 /* Grid & Cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%; }
 .card { background-color: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; transition: transform 0.2s, border-color 0.2s; }
+.card:hover { transform: translateY(-3px); border-color: var(--text-muted); }
 .card-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; }
 .card h3 { color: #ffffff; font-size: 1.25rem; margin-bottom: 1rem; }
 .card p { color: var(--text-muted); }
 .card-tech { font-family: monospace; color: var(--accent); margin-top: 1rem; font-size: 0.9rem; }
+
 .project-links { margin-top: 1.5rem; display: flex; gap: 1.5rem; flex-wrap: wrap; border-top: 1px solid var(--border-color); padding-top: 1rem; }
 .project-links a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
 .project-links a:hover { color: var(--accent); }
+
+/* --- HOMELAB DASHBOARD ADDITIONS --- */
+
+/* Gateway Hub Specifics */
+.gateway-body { display: block; }
+.gateway-container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 2rem 0; }
+.gateway-card { text-decoration: none; cursor: pointer; display: block; }
+.gateway-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+
+.gateway-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 4rem 0;
+}
+
+/* Scroll Arrows */
+.scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    color: var(--text-muted);
+    font-size: 2rem;
+    text-decoration: none;
+    animation: bounce-down 2s infinite;
+    transition: color 0.2s;
+}
+.scroll-arrow:hover { color: var(--accent); }
+
+.scroll-up-arrow {
+    position: absolute;
+    top: 2rem;
+    color: var(--text-muted);
+    font-size: 2rem;
+    text-decoration: none;
+    animation: bounce-up 2s infinite;
+    transition: color 0.2s;
+}
+.scroll-up-arrow:hover { color: var(--accent); }
+
+@keyframes bounce-down {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+@keyframes bounce-up {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(20px); }
+    60% { transform: translateY(10px); }
+}
+
+/* Status Card Layout - MOVED TO VERTICAL */
+.status-card {
+    display: flex;
+    flex-direction: column; /* Force everything to stack */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    text-decoration: none;
+    gap: 1.5rem;
+    height: 100%; /* Stretch gracefully inside the CSS grid */
+}
+
+.status-info { 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 1rem; 
+    min-width: 0; 
+    width: 100%;
+}
+.status-info > div {
+    min-width: 0;
+    overflow: hidden;
+}
+.status-info i { font-size: 1.5rem; color: var(--text-main); flex-shrink: 0; margin-top: 0.15rem; }
+.status-info h3 { margin: 0; font-size: 1.1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Differentiated text elements for the cells */
+.status-info .svc-url { margin: 0; font-size: 0.85rem; color: var(--text-muted); font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.status-info .svc-desc { margin: 0.75rem 0 0 0; font-size: 0.9rem; color: var(--text-main); white-space: normal; line-height: 1.5; }
+
+/* Status Dots & Pulses Wrapper - FORCED TO BOTTOM */
+.status-indicators-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: auto; /* This pins the footer to the bottom of the card */
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+
+.status-offline .dot { background-color: #ef4444; box-shadow: 0 0 8px rgba(239, 68, 68, 0.4); }
+.status-offline { color: #ef4444; }
+
+.status-online .dot { 
+    background-color: #22c55e; 
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+    animation: pulse-green 2s infinite;
+}
+.status-online { color: #22c55e; }
+
+.status-live .dot { 
+    background-color: #a855f7; 
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.8);
+    animation: pulse-purple 1.5s infinite;
+}
+.status-live { color: #a855f7; }
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes pulse-purple {
+    0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(168, 85, 247, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+}
 
 /* --- ATS RESUME TEMPLATE (HIDDEN FOR WEB, SHOWN FOR PDF) --- */
 #print-template {
@@ -134,3 +268,21 @@ body.light-mode .navbar { background-color: rgba(248, 250, 252, 0.95); }
 #print-template .print-item-date { font-weight: normal; font-style: italic; font-size: 10pt; }
 #print-template ul { margin-top: 2px; padding-left: 20px; margin-bottom: 0; }
 #print-template li { margin-bottom: 4px; text-align: justify; }
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .nav-links li:not(:last-child) { display: none; }
+    
+    .hero { padding: 2rem 0; }
+    .hero h1 { font-size: 2.5rem; }
+    .subtitle { font-size: 1.2rem; }
+    
+    .contact-bar { flex-direction: column; align-items: center; gap: 1rem; }
+    
+    .grid { grid-template-columns: 1fr; } 
+    
+    .section { padding: 3rem 0; }
+    .gateway-section { padding: 3rem 1rem; height: auto; min-height: 100vh; }
+    
+    .scroll-arrow, .scroll-up-arrow { position: static; margin: 2rem auto; display: block; width: fit-content; }
+}
