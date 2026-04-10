@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark L F Tlau | Loading...</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/eb2155b008.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="main-nav">
+        <div class="nav-container">
+            <a href="./index.html" class="brand"><i class="fa-solid fa-arrow-left"></i> <span id="nav-name">Back to Hub</span></a>
+            <ul class="nav-links">
+                <li><a href="#expertise">Capabilities</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><button id="theme-toggle" class="btn-icon"><i class="fa-solid fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Web UI -->
+    <div id="resume-content">
+        <header class="hero">
+            <div class="container text-center">
+                <h1 id="hero-name">Loading...</h1>
+                <p class="subtitle" id="hero-title"></p>
+                
+                <div class="contact-bar" id="contact-bar"></div>
+
+                <p class="bio" id="hero-bio"></p>
+                
+                <div class="tech-stack" id="hero-skills"></div>
+
+                <div class="cta-buttons">
+                    <a href="#" id="hire-me-btn" class="btn btn-primary"><i class="fa-solid fa-handshake"></i> Hire Me</a>
+                    <button id="download-pdf-btn" class="btn btn-outline"><i class="fa-solid fa-file-pdf"></i> View Resume</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="expertise" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title text-center" id="expertise-header">Core Capabilities</h2>
+                <div class="grid" id="expertise-grid"></div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title text-center" id="experience-header">Professional Experience</h2>
+                <div class="grid" id="experience-grid"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title text-center" id="projects-header">Projects & Deployments</h2>
+                <div class="grid" id="projects-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hidden ATS-Friendly PDF Template -->
+    <div id="print-template" style="display: none;">
+        <h1 id="print-name"></h1>
+        <div class="print-subtitle" id="print-title"></div>
+        <div class="print-contact" id="print-contact"></div>
+
+        <h2>Summary</h2>
+        <div id="print-summary"></div>
+
+        <h2>Technical Skills</h2>
+        <div id="print-skills"></div>
+
+        <h2>Professional Experience</h2>
+        <div id="print-experience"></div>
+
+        <h2>Key Projects</h2>
+        <div id="print-projects"></div>
+
+        <h2>Education & Certifications</h2>
+        <div id="print-education"></div>
+    </div>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "basics": {
+    "name": "Mark L F Tlau",
+    "title": "Full-Stack Software Engineer",
+    "bio": "Architecting and developing high-performance web applications. Focused on rapid client-side hydration, real-time communication, and scalable backend APIs using modern frameworks.",
+    "contact": {
+      "phone": "+91 6009341754",
+      "email": "wintersunset95@gmail.com",
+      "github": "https://github.com/WinterSunset95",
+      "linkedin": "https://linkedin.com/in/mark-tlau"
+    }
+  },
+  "skills": [
+    { "name": "TypeScript / Node", "icon": "fa-brands fa-js" },
+    { "name": "React / Next.js", "icon": "fa-brands fa-react" },
+    { "name": "SvelteKit", "icon": "fa-brands fa-html5" },
+    { "name": "Go Backends", "icon": "fa-brands fa-golang" },
+    { "name": "Firebase / SQL", "icon": "fa-solid fa-database" },
+    { "name": "REST APIs & Vercel", "icon": "fa-solid fa-server" }
+  ],
+  "expertise": [
+    {
+      "title": "Full-Stack Architecture",
+      "icon": "fa-solid fa-layer-group",
+      "description": "Managing the full project lifecycle from requirements gathering to deployment, creating resilient backend services for commercial e-commerce platforms."
+    },
+    {
+      "title": "Real-time Systems",
+      "icon": "fa-solid fa-bolt",
+      "description": "Implementing WebSockets, WebRTC, and Firebase listeners for low-latency peer-to-peer communication and messaging."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Freelance Full-Stack Engineer",
+      "company": "Self-Employed",
+      "duration": "March 2025 - Present",
+      "description": "Architecting and developing full-stack web applications for clients, including commercial e-commerce platforms and data-driven dashboards. Managing the full project lifecycle, from initial consultation to deployment and maintenance."
+    },
+    {
+      "role": "Computer Science Instructor",
+      "company": "The Pathway School",
+      "duration": "January 2024 - March 2025",
+      "description": "Developed and delivered the Computer Science curriculum for grades 5-8, focusing on foundational programming concepts and logical problem-solving."
+    }
+  ],
+  "projects": [
+    {
+      "title": "SvelteTube",
+      "icon": "fa-solid fa-film",
+      "description": "A video/movie aggregation platform built with SvelteKit, featuring a custom web scraper and integration with the Consumet API for a high-performance, reactive UI.",
+      "tech": "SvelteKit • Consumet API • Web Scraping",
+      "links": {
+        "live": "https://svelte-tube.vercel.app"
+      }
+    },
+    {
+      "title": "Chat-UM",
+      "icon": "fa-solid fa-comments",
+      "description": "A full-stack, real-time chat application with public rooms and private messaging, built using Next.js and Firebase for backend services and authentication.",
+      "tech": "Next.js • Firebase • React",
+      "links": {
+        "live": "https://chat-um.vercel.app"
+      }
+    },
+    {
+      "title": "Peekaboo Watch-Party",
+      "icon": "fa-solid fa-video",
+      "description": "A WebRTC clone with persistent chat and low-latency P2P media synchronization.",
+      "tech": "SvelteKit • WebRTC • Firebase",
+      "links": {
+        "live": "https://peekaboo.wintersunset95.in",
+        "source": "https://github.com/WinterSunset95/peekaboo"
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": "Post Graduate Diploma in Computer Applications (PGDCA)",
+      "institution": "E-MAX India",
+      "year": "2023"
+    }
+  ]
+}

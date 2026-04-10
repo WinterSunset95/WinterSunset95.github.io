@@ -1,0 +1,51 @@
+{
+  "basics": {
+    "name": "Mark L F Tlau",
+    "title": "SysAdmin | IT Operations | Fullstack Developer",
+    "bio": "I architect secure, highly available IT infrastructure and build high-performance web applications. Bridging the gap between writing clean code and running reliable servers. Specializing in Linux administration, container orchestration, and fullstack TypeScript/Go development.",
+    "contact": {
+      "phone": "+91 6009341754",
+      "email": "wintersunset95@gmail.com",
+      "github": "https://github.com/WinterSunset95",
+      "linkedin": "https://linkedin.com/in/mark-tlau"
+    }
+  },
+  "skills": [
+    { "name": "Linux/Unix", "icon": "fa-brands fa-linux" },
+    { "name": "Networking & pfSense", "icon": "fa-solid fa-network-wired" },
+    { "name": "Docker & Containers", "icon": "fa-brands fa-docker" },
+    { "name": "TypeScript & Go", "icon": "fa-solid fa-code" },
+    { "name": "SvelteKit & Next.js", "icon": "fa-brands fa-js" }
+  ],
+  "expertise": [
+    {
+      "title": "Systems Administration",
+      "icon": "fa-solid fa-server",
+      "description": "Deployment and maintenance of Linux servers. Proficient in Active Directory, user provisioning, and automated disaster recovery."
+    },
+    {
+      "title": "Fullstack Web Development",
+      "icon": "fa-solid fa-code",
+      "description": "Building custom web apps and PWAs. Focused on rapid client-side rendering with SvelteKit/Next.js and secure backend APIs."
+    },
+    {
+      "title": "Network Engineering",
+      "icon": "fa-solid fa-shield-halved",
+      "description": "Design of secure networks, VLAN segmentation, reverse proxies (Caddy), and encrypted VPN tunnels (Tailscale/WireGuard)."
+    }
+  ],
+  "projects": [
+    {
+      "title": "High-Availability Container Cluster",
+      "icon": "fa-solid fa-diagram-project",
+      "description": "Architected a secure, multi-tenant deployment environment bypassing CGNAT. Utilized Docker and Caddy for automated SSL provisioning and zero-trust proxying.",
+      "tech": "Docker • Caddy • Tailscale"
+    },
+    {
+      "title": "Peekaboo Watch-Party",
+      "icon": "fa-solid fa-video",
+      "description": "A WebRTC watch-party clone with persistent chat. Engineered as a mobile-first PWA with a Firebase backend for low-latency peer-to-peer media synchronization.",
+      "tech": "SvelteKit • WebRTC • Firebase"
+    }
+  ]
+}

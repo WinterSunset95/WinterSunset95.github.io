@@ -1,0 +1,71 @@
+{
+  "basics": {
+    "name": "Mark L F Tlau",
+    "title": "Systems Administrator & Network Engineer",
+    "bio": "Specializing in Linux administration, secure container orchestration, and enterprise network defense. Built to ensure zero downtime, strictly adhere to SLAs, and bypass complex CGNAT restrictions.",
+    "contact": {
+      "phone": "+91 6009341754",
+      "email": "wintersunset95@gmail.com",
+      "github": "https://github.com/WinterSunset95",
+      "linkedin": "https://linkedin.com/in/mark-tlau"
+    }
+  },
+  "skills": [
+    { "name": "Arch/Debian Linux", "icon": "fa-brands fa-linux" },
+    { "name": "Docker/Podman", "icon": "fa-brands fa-docker" },
+    { "name": "Bash & Shell Scripting", "icon": "fa-solid fa-terminal" },
+    { "name": "pfSense & Firewalls", "icon": "fa-solid fa-shield-halved" },
+    { "name": "Tailscale/WireGuard", "icon": "fa-solid fa-network-wired" },
+    { "name": "VPS & Database Admin", "icon": "fa-solid fa-database" }
+  ],
+  "expertise": [
+    {
+      "title": "Linux Server Administration",
+      "icon": "fa-solid fa-server",
+      "description": "Deployment, disaster recovery, and hardware acceleration management (Intel QuickSync) for heavy local workloads."
+    },
+    {
+      "title": "Network Segmentation & Security",
+      "icon": "fa-solid fa-shield-virus",
+      "description": "Design of secure VLANs, DNS sinkholing, and automated SSL certificate management via edge proxies."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Freelance Systems & Backend Engineer",
+      "company": "Self-Employed",
+      "duration": "March 2025 - Present",
+      "description": "Architecting resilient backend services and managing VPS deployments. Overseeing full project lifecycles including database administration (PostgreSQL/MariaDB), secure containerized deployments, and ongoing server maintenance."
+    },
+    {
+      "role": "IT Technician & Computer Science Instructor",
+      "company": "The Pathway School",
+      "duration": "January 2024 - March 2025",
+      "description": "Administered a 35-machine network, serving as the primary L1/L2 technical expert for administrative staff. Handled hardware troubleshooting, network uptime, and engineered VBA automation saving 120+ administrative hours per cycle."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Multi-Tenant Homelab Cluster",
+      "icon": "fa-solid fa-diagram-project",
+      "description": "Architected a zero-trust environment bypassing CGNAT using Tailscale mesh networks and Caddy reverse proxies.",
+      "tech": "Docker • Caddy • Arch Linux",
+      "links": {
+        "live": "https://apis.wintersunset95.in"
+      }
+    },
+    {
+      "title": "Linux Environment Automation",
+      "icon": "fa-solid fa-microchip",
+      "description": "Engineered a custom Bash scripting suite to fully automate the provisioning of development environments on login. Manages application state, terminal session restoration, and workspace layouts, reducing initialization time by 85%.",
+      "tech": "Bash • Linux • Systemd"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Post Graduate Diploma in Computer Applications (PGDCA)",
+      "institution": "E-MAX India",
+      "year": "2023"
+    }
+  ]
+}

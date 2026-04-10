@@ -1,0 +1,85 @@
+{
+  "basics": {
+    "name": "Mark L F Tlau",
+    "title": "Automation Specialist & Systems Programmer",
+    "bio": "I specialize in tackling complex data extraction challenges and writing performant, low-level binaries. From bypassing advanced anti-bot measures in Python to writing pure C network daemons and Go CLI tools.",
+    "contact": {
+      "phone": "+91 6009341754",
+      "email": "wintersunset95@gmail.com",
+      "github": "https://github.com/WinterSunset95",
+      "linkedin": "https://linkedin.com/in/mark-tlau"
+    }
+  },
+  "skills": [
+    { "name": "Python & DrissionPage", "icon": "fa-brands fa-python" },
+    { "name": "C / C++", "icon": "fa-solid fa-c" },
+    { "name": "Go (Golang)", "icon": "fa-brands fa-golang" },
+    { "name": "Excel VBA", "icon": "fa-solid fa-file-excel" },
+    { "name": "Bash & Shell Scripting", "icon": "fa-solid fa-terminal" },
+    { "name": "Pandas & NumPy", "icon": "fa-solid fa-table-list" }
+  ],
+  "expertise": [
+    {
+      "title": "Advanced Web Scraping",
+      "icon": "fa-solid fa-spider",
+      "description": "Bypassing aggressive anti-bot measures (Cloudflare, JS challenges, CAPTCHAs) by reverse-engineering obfuscated JavaScript."
+    },
+    {
+      "title": "Low-Level Programming",
+      "icon": "fa-solid fa-microchip",
+      "description": "Writing lightweight, memory-safe C/C++ and Go applications to handle raw socket communication, APIs, and system utilities."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Freelance Data Engineer",
+      "company": "Self-Employed",
+      "duration": "March 2025 - Present",
+      "description": "Engineering bespoke data extraction and automation pipelines, bypassing advanced anti-bot measures to deliver clean, structured data for clients."
+    },
+    {
+      "role": "Excel Expert & CS Teacher",
+      "company": "The Pathway School",
+      "duration": "January 2024 - March 2025",
+      "description": "Spearheaded a major process improvement initiative by developing a comprehensive, macro-driven Excel VBA application to automate the generation of 1,100+ unique student report cards, reducing manual processing time by over 95%."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Advanced Anti-Bot Scraping System",
+      "icon": "fa-solid fa-user-secret",
+      "description": "Engineered a sophisticated Python scraper utilizing DrissionPage to bypass Cloudflare and CAPTCHAs. Reverse-engineered obfuscated JS to decrypt data sources, achieving a 99.8% extraction success rate for 2M+ records.",
+      "tech": "Python • DrissionPage • Reverse Engineering"
+    },
+    {
+      "title": "WhatsGo CLI Client",
+      "icon": "fa-brands fa-whatsapp",
+      "description": "Developed a command-line WhatsApp client in Go, demonstrating expertise in building concurrent, networked applications and interacting with external APIs.",
+      "tech": "Go • CLI • Web APIs",
+      "links": {
+        "source": "https://github.com/WinterSunset95/WhatsGo"
+      }
+    },
+    {
+      "title": "C/C++ Project Suite & twitch_c",
+      "icon": "fa-solid fa-code-commit",
+      "description": "Developed a diverse suite of applications including a memory-safe Twitch chatbot (sockets/IRC), a Google Maps Data Extractor, and classic games demonstrating a strong grasp of C/C++ fundamentals.",
+      "tech": "C/C++ • Sockets • Memory Management",
+      "links": {
+        "source": "https://github.com/WinterSunset95"
+      }
+    }
+  ],
+  "education": [
+    {
+      "degree": "Post Graduate Diploma in Computer Applications (PGDCA)",
+      "institution": "E-MAX India",
+      "year": "2023"
+    },
+    {
+      "degree": "C/C++ Internship",
+      "institution": "Novanectar Services Pvt. Ltd.",
+      "year": "2025"
+    }
+  ]
+}
